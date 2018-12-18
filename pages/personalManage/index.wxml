@@ -1,0 +1,27 @@
+<view style='backgrond:#fff;'>
+  <!-- <view class="">
+    <dialog id='dialog' 
+      title='提现提醒' 
+      content='提现是不可能的' 
+      cancelText='取消' 
+      confirm='确定'
+      bind:cancelEvent="_cancelEvent"  
+      bind:confirmEvent="_confirmEvent">
+    </dialog>
+</view> -->
+  <view>
+    <personbg id="personbg" isShowPlace='true' isShowCheck='true' isShowBtn='true'></personbg>
+  </view>
+  <view class='publicDanwei afterClear'>
+    <view class='publicDanwei-left'>收益单位：财富</view>
+    <view class='publicDanwei-right'>昨日收益</view>
+  </view>
+  <view style="position:relative;margin-bottom:100rpx;">
+    <personalList id='personalList'></personalList>
+    <personalHasCheck></personalHasCheck>
+  </view>
+
+  <view class='addShoper'>
+    <button>添加店员</button>
+  </view>
+</view>

@@ -1,0 +1,214 @@
+.moneyTotal {
+  background: #f5b32a;
+  width: 100%;
+  min-height: 300rpx;
+  flex-flow: row;
+  display: flex;
+  text-align: center;
+}
+
+.kyMoney {
+  width: 50%;
+  height: 120rpx;
+  font-size: 36rpx;
+  color: #fff;
+  border-right: 1rpx #fff solid;
+  margin-top: 10%;
+}
+
+.monthMoney {
+  width: 50%;
+  height: 120rpx;
+  font-size: 36rpx;
+  color: #fff;
+  margin-top: 10%;
+}
+
+.moneyWord {
+  font-size: 26rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+}
+
+.moneyNum {
+  height: 70rpx;
+  line-height: 70rpx;
+  font-family: PingFangSC-Semibold;
+}
+
+.threeBtn {
+  display: flex;
+  width: 94%;
+  margin-left: 3%;
+  margin-right: 3%;
+  border-radius: 10rpx;
+  background: #fff;
+  text-align: center;
+  padding: 40rpx;
+  margin-top: -60rpx;
+}
+
+.threeBtn view {
+  width: 33.3%;
+}
+
+.threeBtn view image {
+  width: 100rpx;
+  height: 100rpx;
+  display: inline-block;
+}
+
+.myShop {
+  text-align: left;
+}
+
+.myYuan {
+  text-align: center;
+}
+
+.sendTong {
+  text-align: right;
+}
+
+.indexNews {
+  background: #fff;
+  width: 94%;
+  margin: 26rpx 3%;
+  border-radius: 10rpx;
+  padding: 20rpx;
+  display: flex;
+  flex-flow: row;
+}
+
+.indexNewsIcon image {
+  width: 80rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+}
+
+.indexRights {
+  display: flex;
+  flex-direction: column;
+}
+
+.indexRights image {
+  width: 40rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  vertical-align: center;
+  display: flex;
+  margin-top: 50%;
+}
+
+.indexNewsList {
+  width: 80%;
+  margin-left: 25rpx;
+  flex-flow: row;
+}
+
+.indexNewsList view {
+  height: 40rpx;
+  line-height: 40rpx;
+}
+
+.indexNewsList view image {
+  width: 16rpx;
+  height: 16rpx;
+  margin-right: 5rpx;
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  vertical-align: top;
+  margin-top: 2%;
+}
+
+.indexNewsListName {
+  color: #f1a521;
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.indexNewsListTime {
+  margin-left: 20rpx;
+  color: #ccc;
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.newsLength {
+  color: #535353;
+  width: 60%;
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.myYeBox {
+  background: #fff;
+  width: 94%;
+  margin: 26rpx 3%;
+  border-radius: 10rpx;
+  padding: 20rpx 0;
+}
+
+.myYeTitle {
+  display: flex;
+  flex-flow: row;
+  padding-bottom: 30rpx;
+  border-bottom: 1rpx #eee solid;
+}
+.wordBg{
+  width: 5%;
+  margin-left: 20rpx;
+}
+.wordBg image {
+  width: 20rpx;
+  height: 46rpx;
+  margin-right: 5rpx;
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  vertical-align: top;
+  margin-top: 2%;
+}
+.indexWordTitle{
+  font-size: 36rpx;
+  width: 89%;
+}
+.yewuList{
+  display: flex;
+  width: 94%;
+  margin-left: 3%;
+  margin-right: 3%;
+  border-radius: 10rpx;
+  background: #fff;
+  text-align: center;
+  padding: 30rpx 0;
+}
+.yewuList view{
+  width: 25%;
+  margin-top: 15rpx;
+}
+.yewuList view image{
+  width: 100%;
+}
+
+
+
+
+.swiper_container {
+ height: 120rpx;
+ width: 80%;
+}
+.swiper_item {
+ overflow: hidden;
+ text-overflow: ellipsis;
+ white-space: nowrap;
+}

@@ -1,0 +1,85 @@
+.list {
+  display: flex;
+  flex-flow: row;
+  width: 100%;
+  background: #fff;
+  padding: 14rpx 2%;
+}
+
+.listImg {
+}
+
+.listImg image {
+  width: 160rpx;
+  height: 160rpx;
+  line-height: 160rpx;
+}
+
+.iconCheck image {
+  width: 120rpx;
+  height: 54rpx;
+  line-height: 54rpx;
+}
+
+.listNameAndTel {
+  margin-left: 20rpx;
+  width: 80%;
+}
+
+.listNameAndPlace {
+  height: 70rpx;
+  line-height: 80rpx;
+}
+
+.listTel {
+  height: 80rpx;
+  line-height: 70rpx;
+  font-size: 24rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(153, 153, 153, 1);
+}
+
+.listName {
+  font-size: 32rpx;
+  font-family: PingFangSC-Semibold;
+  font-weight: 600;
+  color: rgba(51, 51, 51, 1);
+}
+
+.listPlace {
+  font-size: 24rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(153, 153, 153, 1);
+  margin-left: 10rpx;
+}
+
+.iconCheck {
+  margin-top: 7%;
+}
+.balanceNum{
+  font-size:40rpx;
+font-family:PingFangSC-Medium;
+font-weight:500;
+color:rgba(245,179,42,1);
+margin-top: 10%;
+margin-right: 6rpx;
+}
+.dudaoTotal{
+  font-size:20rpx;
+font-family:PingFangSC-Regular;
+font-weight:400;
+color:rgba(51,51,51,1);
+padding: 10rpx 0;
+}
+.dudaoNum{
+  color: #2646FF !important;
+  margin-left: 10rpx;
+}
+.listAllMoney{
+  font-size:24rpx;
+font-family:PingFangSC-Regular;
+font-weight:400;
+color:rgba(153,153,153,1);
+}

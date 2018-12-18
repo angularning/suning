@@ -38,6 +38,7 @@ Page({
       　　　　}
     })
   },
+  
   getDateList(){
     const date= new Date().getMonth()+1;
     console.log(date);

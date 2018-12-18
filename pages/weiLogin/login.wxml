@@ -1,0 +1,19 @@
+<!--start.wxml-->
+<view class="container">
+  <!-- <block wx:if="{{isShow}}"> -->
+  <view class='nickCenter' wx:if="{{isShow}}">
+    <image class="userLogo" src="/image/suning.png"></image>
+    <view class='nickNameC'>苏宁小助手</view>
+  </view>
+  <!-- </block> -->
+  <block wx:if="{{!isShow}}">
+    <view class='nickCenter'>
+      <image class="userLogo" src="{{userInfo.avatarUrl}}"></image>
+      <view class='nickNameC'>{{userInfo.nickName}}</view>
+    </view>
+  </block>
+  <view class="remind-box">
+    <button open-type="getUserInfo" class='loginBtn' lang="zh_CN" bindgetuserinfo="onGotUserInfo">微信登录</button>
+    <!-- <button class='loginBtn' bindtap='sLogin'>微信登录</button> -->
+  </view>
+</view>

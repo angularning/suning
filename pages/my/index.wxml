@@ -1,0 +1,52 @@
+<view style='backgrond:#f4f4f4;'>
+  <view class='myCenter'>
+    <view class='userBox'>
+      <view class='userImg'>
+        <image src='/image/defautLogo.png'></image>
+      </view>
+      <view class='userSetName'>
+        <view class='userSetNames'>
+          请设置昵称
+        </view>
+        <view class='userRole'>大客户</view>
+      </view>
+      <view class='publicRight'>
+        <image src='/image/userRight.png'></image>
+      </view>
+    </view>
+
+
+  </view>
+  <view class='userMenu'>
+    <view class='userMenuBox'>
+      <view class='publicHasIcon'>
+        <image src='/image/iconDianma.png'></image>
+        <text>我的店码</text>
+      </view>
+      <view class='publicIconRight'>
+        <image src='/image/iconSmallRight.png'></image>
+      </view>
+    </view>
+    <view class='userMenuBox'>
+      <view class='publicHasIcon'>
+        <image src='/image/iconYj.png'></image>
+        <text>意见反馈</text>
+      </view>
+      <view class='publicIconRight'>
+        <image src='/image/iconSmallRight.png'></image>
+      </view>
+    </view>
+    <view class='userMenuBox'>
+      <view class='publicHasIcon'>
+        <image src='/image/iconXin.png'></image>
+        <text>新手引导</text>
+      </view>
+      <view class='publicIconRight'>
+        <image src='/image/iconSmallRight.png'></image>
+      </view>
+    </view>
+  </view>
+  <view class='logout'>
+    <button>退出账户</button>
+  </view>
+</view>

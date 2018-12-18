@@ -1,0 +1,16 @@
+<!--components/personalList/personalList.wxml-->
+<view class='list' wx:for="{{checkList}}">
+  <view class='listImg'>
+    <image src='/image/defultImg.png'></image>
+  </view>
+  <view class='listNameAndTel'>
+    <view class='listNameAndPlace'>
+      <text class='listName'>{{item.name}}</text>
+      <text class='listPlace'>{{item.place}}</text>
+    </view>
+    <view class='listTel'>{{item.tel}}</view>
+  </view>
+  <view class='iconCheck'>
+    <image src='/image/iconCheck.png'></image>
+  </view>
+</view>

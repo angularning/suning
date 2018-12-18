@@ -1,3 +1,9 @@
 <view>
   <text>抽奖规则是这样的：点击开始</text>
+  <horizontal-cards  
+bgColor="#fff" 
+btnColor="#000" 
+fontColor="#fff"></horizontal-cards>
+<button open-type='getPhoneNumber'  bindgetphonenumber="getPhoneNumber"> 使用微信用户一键登录 </button>
+ <navigator url="../userInfo/userInfo?title=navigate" open-type="redirect">跳转到新页面</navigator>
 </view> 

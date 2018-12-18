@@ -1,0 +1,20 @@
+<view class='list' wx:for="{{checkList}}" id="{{item.id}}" catchtap='toPersonalDetail({{item.id}})'>
+  <view class='listImg'>
+    <image src='/image/defultImg.png'></image>
+  </view>
+  <view class='listNameAndTel'>
+    <view class='listNameAndPlace'>
+      <text class='listName'>{{item.name}}</text>
+      <text class='listPlace'>{{item.place}}</text>
+    </view>
+   <view class='listAllMoney'>
+   总财富   <text>{{item.allMoney}}</text>
+   </view>
+   <view class='dudaoTotal'>
+   督导   <text class='dudaoNum'>{{item.dudao}}</text>
+   </view>
+  </view>
+  <view class='balanceNum'>
+  {{item.balanceNum}}
+  </view>
+</view>

@@ -28,6 +28,7 @@
             <view>{{item.isQian>3?'签到':'未签到'}}</view>
           </view>
       </scroll-view>
+      
       </view>
      
 </view>

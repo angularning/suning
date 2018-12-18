@@ -1,37 +1,41 @@
 {
-    "pages": [
-        "pages/zhuan/zhuan",
-        "pages/userInfo/userInfo",
-        "pages/more/more"
-    ],
-    "window": {
-      "backgroundTextStyle": "light",
-      "navigationBarBackgroundColor": "#fff",
-      "navigationBarTitleText": "仰望",
-      "navigationBarTextStyle": "black",
-      "onReachBottomDistance": "10"
-    },
-    "tabBar": {
-        "list": [
-            {
-                "pagePath": "pages/zhuan/zhuan",
-                "text": "首页",
-                "iconPath": "image/m0.png",
-                "selectedIconPath": "image/m1.png"
-            },
-            {
-                "pagePath": "pages/more/more",
-                "text": "抽奖规则",
-                "iconPath": "image/n0.png",
-                "selectedIconPath": "image/n1.png"
-            }
-            ,
-            {
-              "pagePath": "pages/userInfo/userInfo",
-              "text": "测试",
-              "iconPath": "image/n0.png",
-              "selectedIconPath": "image/n1.png"
-            }
-        ]
-    }
+  "pages": [
+    "pages/index/index",
+    "pages/weiLogin/login",
+    "pages/start/start",
+    "pages/personalManage/index",
+    "pages/my/index",
+    "pages/balance/index",
+    "pages/userInfo/userInfo",
+    "pages/more/more"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "仰望",
+    "navigationBarTextStyle": "black",
+    "onReachBottomDistance": "10"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "image/index/sIndexIconGry.png",
+        "selectedIconPath": "image/index/sIndexIconYellow.png"
+      },
+      {
+        "pagePath": "pages/balance/index",
+        "text": "收益",
+        "iconPath": "image/index/sShouyiIconGry.png",
+        "selectedIconPath": "image/index/sShouyiIconYellow.png"
+      },
+      {
+        "pagePath": "pages/my/index",
+        "text": "我的",
+        "iconPath": "image/index/suserIconGry.png",
+        "selectedIconPath": "image/index/suserIconYellow.png"
+      }
+    ]
+  }
 }

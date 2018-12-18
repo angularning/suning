@@ -4,15 +4,23 @@ Page({
    * 页面的初始数据
    */
   data: {
-    
-  },
 
+    // https://jinrongt.jihustore.com/
+  },
+  onReady:function(){
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
+    console.log(options);
+    // this.dialog = this.selectComponent("#dialog");
+    this.personalBg = this.selectComponent("#personbg");
+    // this.personalList = this.selectComponent("#personalList");
+
+  
   },
+  
   getPhoneNumber(e){
       console.log(e)
   },

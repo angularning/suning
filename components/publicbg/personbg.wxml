@@ -1,0 +1,14 @@
+<view class='wrap'>
+  <view class='showBg'>
+   <view class='topBgList'>
+    <view class='hasPlace' wx:if='{{isShowPlace}}'>已经启动大区{{placeNum}}</view>
+    <view class='hasDudao' wx:if='{{isShowDudao}}'>拥有督导{{dudaoNum}}</view>
+    <view class='waitCheck' wx:if='{{isShowCheck}}'>待审核{{waitNum}}</view>
+    <view class='hasBtn' wx:if='{{isShowBtn}}'>
+      <button class='publicBtnSmall'>分成设置</button>
+    </view>
+   </view>
+   <view>
+   </view>
+  </view>
+</view>

@@ -6,7 +6,12 @@ page {
 icon {
     vertical-align: middle;
 }
-
+.afterClear::after{
+    content: '';
+    width:1rpx;
+    clear: both;
+    display: block;
+}
 .weui-cells {
     position: relative;
     margin-top: 1.17647059em;

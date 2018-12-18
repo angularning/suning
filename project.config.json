@@ -4,7 +4,7 @@
 		"ignore": []
 	},
 	"setting": {
-		"urlCheck": true,
+		"urlCheck": false,
 		"es6": true,
 		"postcss": true,
 		"minified": true,
@@ -12,8 +12,8 @@
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.3.0",
-	"appid": "wx5001013feaf5640c",
-	"projectname": "zhuan",
+	"appid": "wxf697231961259f6b",
+	"projectname": "suning",
 	"debugOptions": {
 		"hidedInDevtools": []
 	},

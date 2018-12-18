@@ -1,0 +1,71 @@
+<view style='backgrond:#f4f4f4;'>
+  <view class='moneyTotal'>
+    <view class='kyMoney'>
+      <view class='moneyWord'>可提现财富</view>
+      <view class='moneyNum'>{{cashableWealth}}</view>
+    </view>
+    <view class='monthMoney'>
+      <view class='moneyWord'>本月收益（财富）</view>
+      <view class='moneyNum'>{{monthWealth}}</view>
+    </view>
+  </view>
+  <view class='threeBtn'>
+    <view class='myShop'>
+      <image src='/image/index/myDianma.png'></image>
+    </view>
+    <view class='myYuan' bindtap='toMyYuan'>
+      <image src='/image/index/myYuan.png'></image>
+    </view>
+    <view class='sendTong'>
+      <image src='/image/index/sendTong.png'></image>
+    </view>
+  </view>
+  <view class='indexNews'>
+    <view class='indexNewsIcon'>
+      <image src='/image/index/xiaoxi@2x.png'></image>
+    </view>
+    <swiper class="swiper_container" vertical="true" autoplay="true" circular="true" interval="2000">
+      <view class='indexNewsList'>
+        <view wx:for="{{userMessageList}}">
+          <swiper-item style="height:40rpx;">
+          <image src='/image/block.png'></image>
+          <!-- <text class='indexNewsListName'>小郑</text> -->
+            <text class='newsLength'>{{item.messageContent}}</text>
+            <text class='indexNewsListTime'>2018-01-09</text>
+          </swiper-item>
+        </view>
+    </view>
+    </swiper>
+    <view class='indexRights'>
+      <image src='/image/iconRights.png'></image>
+    </view>
+    </view>
+    <view class='myYeBox'>
+      <view class='myYeTitle'>
+        <view class='wordBg'>
+          <image src='/image/myYeBg.png'></image>
+        </view>
+        <view class='indexWordTitle'>
+          <text>我的业务</text>
+        </view>
+        <view class='indexRights' style='margin-top:-10rpx;margin-right:20rpx;'>
+          <image src='/image/iconRights.png'></image>
+        </view>
+      </view>
+      <view class='yewuList'>
+        <view class='baiduYe'>
+          <image src='/image/index/iconBaidus.png'></image>
+        </view>
+        <view class='haokanYe'>
+          <image src='/image/index/iconHaokans.png'></image>
+        </view>
+        <view class='shandianYe'>
+          <image src='/image/index/iconShans.png'></image>
+        </view>
+        <view class='manageYe'>
+          <image src='/image/index/iconYes.png'></image>
+        </view>
+      </view>
+    </view>
+
+  </view>
