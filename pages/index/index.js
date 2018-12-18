@@ -47,6 +47,7 @@ Page({
   getPhoneNumber(e) {
     console.log(e)
   },
+ 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -72,6 +73,18 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload: function() {
+
+  },
+  // 跳转相应的业务
+  toYeDetail(e) {
+    console.log(e.currentTarget.dataset.num);
+    let num = e.currentTarget.dataset.num;
+    wx.navigateTo({
+      url: '../userInfo/userInfo'
+    })
+    if (num == 0) {
+     
+    }
 
   },
   toMyYuan: function() {

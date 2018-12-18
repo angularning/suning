@@ -1,7 +1,7 @@
 {
   "pages": [
-    "pages/index/index",
     "pages/weiLogin/login",
+    "pages/index/index",
     "pages/start/start",
     "pages/personalManage/index",
     "pages/my/index",
@@ -17,6 +17,7 @@
     "onReachBottomDistance": "10"
   },
   "tabBar": {
+    "selectedColor": "#F5B32A",
     "list": [
       {
         "pagePath": "pages/index/index",

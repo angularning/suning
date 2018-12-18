@@ -24,39 +24,41 @@
     <view class='indexNewsIcon'>
       <image src='/image/index/xiaoxi@2x.png'></image>
     </view>
-    <swiper class="swiper_container" vertical="true" autoplay="true" circular="true" interval="2000">
+    <swiper class="swiper_container" vertical="true" autoplay="true" circular="true" interval="2000" display-multiple-items='2'>
       <view class='indexNewsList'>
         <view wx:for="{{userMessageList}}">
           <swiper-item style="height:40rpx;">
-          <image src='/image/block.png'></image>
-          <!-- <text class='indexNewsListName'>小郑</text> -->
+            <image src='/image/block.png'></image>
+            <!-- <text class='indexNewsListName'>小郑</text> -->
             <text class='newsLength'>{{item.messageContent}}</text>
             <text class='indexNewsListTime'>2018-01-09</text>
           </swiper-item>
         </view>
-    </view>
+      </view>
     </swiper>
-    <view class='indexRights'>
+    <view class='indexRights' style='margin-top:4%;margin-left:10rpx;'>
       <image src='/image/iconRights.png'></image>
     </view>
-    </view>
-    <view class='myYeBox'>
-      <view class='myYeTitle'>
-        <view class='wordBg'>
-          <image src='/image/myYeBg.png'></image>
-        </view>
-        <view class='indexWordTitle'>
-          <text>我的业务</text>
-        </view>
-        <view class='indexRights' style='margin-top:-10rpx;margin-right:20rpx;'>
-          <image src='/image/iconRights.png'></image>
-        </view>
+  </view>
+  <view class='myYeBox'>
+    <view class='myYeTitle'>
+      <view class='wordBg'>
+        <image src='/image/myYeBg.png'></image>
       </view>
-      <view class='yewuList'>
-        <view class='baiduYe'>
-          <image src='/image/index/iconBaidus.png'></image>
+      <view class='indexWordTitle'>
+        <text>我的业务</text>
+      </view>
+      <view class='indexRights' style='margin-top:-10rpx;margin-right:20rpx;'>
+        <image src='/image/iconRights.png'></image>
+      </view>
+    </view>
+    <view class='yewuList'>
+      <block wx:for="{{businessModelList}}">
+        <view data-num='{{index}}' bindtap='toYeDetail'>
+          <image src='{{item.businessIoc}}'></image>
         </view>
-        <view class='haokanYe'>
+      </block>
+      <!-- <view class='haokanYe'>
           <image src='/image/index/iconHaokans.png'></image>
         </view>
         <view class='shandianYe'>
@@ -64,8 +66,8 @@
         </view>
         <view class='manageYe'>
           <image src='/image/index/iconYes.png'></image>
-        </view>
-      </view>
+        </view> -->
     </view>
-
   </view>
+
+</view>

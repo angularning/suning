@@ -19,7 +19,7 @@ Page({
     wx.checkSession({
       success: function () {
         console.log('存在登陆态');
-        this.goToIndex();
+        // this.goToIndex();
       },
       fail: function () {
         console.log('不存在登陆态');
@@ -74,7 +74,22 @@ Page({
   
   onGotUserInfo:function(e){
     console.log(e);
-
+    wx.login({
+      success(res) {
+        console.log(res)
+        if (res.code) {
+          // 发起网络请求
+          // wx.request({
+          //   url: 'https://jinrongt.jihustore.com/shome',
+          //   data: {
+          //     code: res.code
+          //   }
+          // })
+        } else {
+          console.log('登录失败！' + res.errMsg)
+        }
+      }
+    })
     // var that=this;
     // console.log(e);
    
