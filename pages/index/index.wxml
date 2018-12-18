@@ -36,8 +36,6 @@
         </view>
     </view>
     </swiper>
-    <view>
-    test</view>
     <view class='indexRights'>
       <image src='/image/iconRights.png'></image>
     </view>
