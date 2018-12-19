@@ -1,0 +1,12 @@
+.publicGetCode {
+  position: absolute;
+  right: 20rpx;
+  text-align: right;
+top: 30rpx;
+color: #55B5FF;
+font-size: 24rpx;
+padding: 0 10rpx;
+border: none !important;
+background: none !important;
+z-index: 10;
+}

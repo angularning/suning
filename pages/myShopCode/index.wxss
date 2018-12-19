@@ -1,0 +1,31 @@
+.userCodeImg {
+  margin-top: 30%;
+}
+
+.userCodeImg image {
+  width: 400rpx;
+  height: 400rpx;
+  padding: 30rpx;
+  border: 2rpx #ccc solid;
+}
+
+.userCodeWord {
+  font-family: PingFangSC-Semibold;
+  font-weight: 600;
+  color: rgba(51, 51, 51, 1);
+  height: 50rpx;
+  line-height: 50rpx;
+  letter-spacing: 2rpx;
+  font-size: 36rpx;
+  margin-top: 5%;
+}
+
+.userCodeTip {
+  height: 40rpx;
+  font-size: 28rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(153, 153, 153, 1);
+  line-height: 40rpx;
+  margin-top: 5%;
+}

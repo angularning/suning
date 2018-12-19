@@ -1,9 +1,9 @@
-<view style='backgrond:#fff;'>
-  <view>
-  <image src=''></image>
-  <view>
-2F89WE09
-  </view>  
-  <view>请员工扫描二维码或输入店码</view>
+<view style='backgrond:#fff;text-align:center;height:100%;'>
+  <view class='userCodeImg'>
+    <image src='/image/myErCode.png'></image>
+    <view class='userCodeWord'>
+      2F89WE09
+    </view>
+    <view class='userCodeTip'>请员工扫描二维码或输入店码</view>
   </view>
 </view>

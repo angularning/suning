@@ -6,7 +6,7 @@ Page({
     remind: '加载中',
     angle: 0,
     userInfo: {},
-    isShow:true
+    isShow: true
   },
   goToIndex: function() {
     console.log('11111')
@@ -17,16 +17,16 @@ Page({
   onLoad: function() {
     console.log('onLoad');
     wx.checkSession({
-      success: function () {
+      success: function() {
         console.log('存在登陆态');
         // this.goToIndex();
       },
-      fail: function () {
+      fail: function() {
         console.log('不存在登陆态');
         // onLogin()
       }
     })
-     
+
 
 
 
@@ -39,12 +39,12 @@ Page({
     //   title: wx.getStorageSync('mallName')
     // });
     let userInfo = wx.getStorageSync('userInfo');
-    console.log('userInfo:'+userInfo)
+    console.log('userInfo:' + userInfo)
     if (userInfo == '' || userInfo == null) {
       this.setData({
         isShow: true,
       });
-    }else{
+    } else {
       this.setData({
         isShow: false,
       });
@@ -71,20 +71,33 @@ Page({
     //   });
     // }
   },
-  
-  onGotUserInfo:function(e){
+
+  onGotUserInfo: function(e) {
     console.log(e);
+    wx.navigateTo({
+      url: '/pages/loginMobile/index'
+    })
     wx.login({
       success(res) {
         console.log(res)
         if (res.code) {
           // 发起网络请求
-          // wx.request({
-          //   url: 'https://jinrongt.jihustore.com/shome',
-          //   data: {
-          //     code: res.code
-          //   }
-          // })
+          wx.request({
+            url: 'https://jinrongt.jihustore.com/suningApplet/user/login',
+            data: {
+              code: res.code
+            },
+            success(e) {
+
+            },
+            fail(e) {
+              console.log(e);
+              
+            },
+            complete(e) {
+              console.log(e)
+            }
+          })
         } else {
           console.log('登录失败！' + res.errMsg)
         }
@@ -92,7 +105,7 @@ Page({
     })
     // var that=this;
     // console.log(e);
-   
+
     // let userInfo = wx.getStorageSync('userInfo');
     // console.log(userInfo)
     // if (userInfo == '' || userInfo==null){
@@ -117,6 +130,6 @@ Page({
         remind: ''
       });
     }, 1000);
-  
+
   }
 });

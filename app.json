@@ -1,6 +1,10 @@
 {
   "pages": [
+    "pages/authentication/index",
+    "pages/loginMobile/index",
+    "pages/loginCode/index",
     "pages/weiLogin/login",
+    "pages/myShopCode/index",
     "pages/index/index",
     "pages/start/start",
     "pages/personalManage/index",

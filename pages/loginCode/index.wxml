@@ -1,0 +1,12 @@
+<view style='backgrond-color:#fff;'>
+ <view class='publicWrap'>
+  <view class='publicLoginWord'>请输入验证码</view>
+  <view style='position:relative;'>
+  <input class='publicLoginInput' type='mobile' placeholder='输入验证码' placeholder-style='color:#999;'></input>
+  <view class='publicGetCode' bindtap="bindButtonTap" disabled='{{disabled}}' style="color:{{color}}">{{text}}</view>
+  </view>
+  <view>
+    <button class='normalBtn'>下一步</button>
+  </view>
+ </view>
+</view>

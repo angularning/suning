@@ -1,0 +1,5 @@
+<view class='authBg'>
+ <view>
+ <image src='/image/authBtn.png'></image>
+ </view>
+</view>
