@@ -1,5 +1,9 @@
 {
   "pages": [
+    "pages/waitCheckFail/index",
+    "pages/waitCheck/index",
+    "pages/enterJoin/index",
+    "pages/authenticationPlan/index",
     "pages/authentication/index",
     "pages/loginMobile/index",
     "pages/loginCode/index",

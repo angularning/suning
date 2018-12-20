@@ -2,7 +2,7 @@ page{
   height: 100%;
 }
 .authBg{
-  background-image: url('http://p2a60yqmm.bkt.clouddn.com/authBgImg.png');
+  background-image: url('http://p2a60yqmm.bkt.clouddn.com/waitCheck.png');
   background-position: top center;
   background-repeat: no-repeat;
   background-size: 100%;

@@ -1,0 +1,27 @@
+
+/* 选项卡切换 */
+.swiper-tab{
+    width: 94%;
+    margin: 5% 3%;
+    border: 2rpx solid #F5B32A;
+    text-align: center;
+    height: 70rpx;
+    line-height: 70rpx;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    border-radius: 10rpx;
+
+}
+.swiper-tab-item{
+    width: 50%; 
+    color:#ccc;
+    font-size: 28rpx;
+}
+.onActive{
+    color:#fff !important;
+    background: #F5B32A;
+}
+swiper{
+  text-align: center;
+}

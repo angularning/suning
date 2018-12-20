@@ -1,0 +1,8 @@
+<view class='authBg'>
+<view class='failWord'>
+  苏宁小管家拒绝了您的请求
+</view>
+ <view class='authBtn' bindtap=''>
+ <button class='enterJoinBtn' bindtap='checkAgain'>重新认证</button>
+ </view>
+</view>

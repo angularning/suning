@@ -1,0 +1,11 @@
+<view class='authBg'>
+<view class='hasEnterTop'>
+    <image class='enterLogo' style="{{imageType==1?'width:70%;':'width:50%;'}}" src='http://p2a60yqmm.bkt.clouddn.com/enterJoinImg{{imageType}}.png'></image>
+    <view class="publicSuning" bindtap='goToIndex'>
+        加入 <text style='color:#F1A521;'>苏宁小管家</text>
+     </view>
+</view>
+ <view class='authBtn' bindtap=''>
+ <button class='enterJoinBtn' bindtap='enterJoinBtn'>确认加入</button>
+ </view>
+</view>

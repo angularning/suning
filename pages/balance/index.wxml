@@ -1,16 +1,10 @@
 <view style='backgrond:#f4f4f4;'>
 
-<!-- 弹出层 -->
-<view class="">
-    <dialog id='dialog' 
-      title='提现提醒' 
-      content='提现是不可能的' 
-      cancelText='取消' 
-      confirm='确定'
-      bind:cancelEvent="_cancelEvent"  
-      bind:confirmEvent="_confirmEvent">
+  <!-- 弹出层 -->
+  <view class="">
+    <dialog id='dialog' title='提现提醒' content='提现是不可能的' cancelText='取消' confirm='确定' bind:cancelEvent="_cancelEvent" bind:confirmEvent="_confirmEvent">
     </dialog>
-</view>
+  </view>
 
   <view class='myBalance'>
     <view class='myBalanceTotal'>
@@ -71,9 +65,11 @@
               </view>
               <view class='listSmallMoney'>{{item.money}}</view>
             </view>
-             <view class='seeMonthData afterClear'>
+            <view class='seeMonthData afterClear'>
               <view class='seeMonthData-left'>按月查看数据</view>
-              <view class='seeMonthData-right'><image src='/image/seeData.png'></image></view>
+              <view class='seeMonthData-right'>
+                <image src='/image/seeData.png'></image>
+              </view>
             </view>
           </view>
         </swiper-item>
