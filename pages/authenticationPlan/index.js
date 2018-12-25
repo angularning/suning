@@ -5,7 +5,8 @@ Page({
    */
   data: {
     currentTab:0,
-    joinType:1
+    joinType:1,
+    storeCode:''
   },
 
   /**
@@ -14,8 +15,10 @@ Page({
   onLoad: function (options) {
     
   },
-  getPhoneNumber(e){
-      console.log(e)
+  getShopCode:function(e){
+      this.setData({
+        storeCode:e.detail.value
+      })
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -30,8 +33,26 @@ Page({
   onShow: function () {
     
   },
+  
   checkShopCode:function(){
-    let joinType = this.data.joinType;
+    // store / applyStore
+    // 入参：storeCode
+    let storeCode = this.data.storeCode;
+    wx.request({
+      url: 'https://jinrongt.jihustore.com/suningApplet/store/applyStore', 
+      method: 'post',
+      data: {
+        storeCode: storeCode
+      },
+      header: {
+        'content-type': 'application/json' // 默认值
+      },
+      success: (res) => {
+        console.log(res);
+        if (res.statusCode == 200) {
+        }
+      }
+    });
     wx.navigateTo({
       url: '/pages/enterJoin/index?type=' + joinType
     })

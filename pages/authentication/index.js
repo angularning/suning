@@ -13,6 +13,11 @@ Page({
   onLoad: function (options) {
     
   },
+  toAuth:function(){
+    wx.navigateTo({
+      url: '/pages/authenticationPlan/index',
+    })
+  },
   getPhoneNumber(e){
       console.log(e)
   },

@@ -1,0 +1,34 @@
+<view style='backgrond-color:#fff;'>
+  <view>
+    <view class='userMesTitle'>您将给以下用户发送通知</view>
+    <view class='userMesWarp'>
+      <view class='userMesList'>
+        <image class='userRole' src='/image/mesIcon1.png'></image>
+        <view class='publicIcon'>
+          <image bindtap='role1' src='{{roleBo1==true?addIcon:desIcon}}'></image>
+        </view>
+        <view class='roleName'>大区经理</view>
+      </view>
+      <view class='userMesList'>
+        <image class='userRole' src='/image/mesIcon2.png'></image>
+        <view class='publicIcon'>
+          <image bindtap='role2' src='{{roleBo2==true?addIcon:desIcon}}'></image>
+        </view>
+        <view class='roleName'>门店负责人</view>
+      </view>
+      <view class='userMesList'>
+        <image class='userRole' src='/image/mesIcon3.png'></image>
+        <view class='publicIcon'>
+          <image bindtap='role3' src='{{roleBo3==true?addIcon:desIcon}}'></image>
+        </view>
+        <view class='roleName'>所有员工</view>
+      </view>
+    </view>
+    <view class='userMessageInput'>
+      <textarea placeholder='' maxlength="1000" bindinput="getValues"></textarea>
+    </view>
+    <view class='sendMesBtn'>
+    <button class='normalBtn' bindtap='sendMessage'>发送</button>
+    </view>
+  </view>
+</view>

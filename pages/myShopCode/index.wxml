@@ -1,8 +1,11 @@
 <view style='backgrond:#fff;text-align:center;height:100%;'>
   <view class='userCodeImg'>
-    <image src='/image/myErCode.png'></image>
+    <!-- <image src='/image/myErCode.png'></image> -->
+    <view class='canvasImg'>
+      <canvas class='canvas' canvas-id='canvas' bindlongtap='save'></canvas>
+    </view>
     <view class='userCodeWord'>
-      2F89WE09
+      {{getText}}
     </view>
     <view class='userCodeTip'>请员工扫描二维码或输入店码</view>
   </view>

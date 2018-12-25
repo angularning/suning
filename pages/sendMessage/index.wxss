@@ -1,0 +1,62 @@
+.userMesTitle{
+  font-size:32rpx;
+font-family:PingFangSC-Semibold;
+font-weight:600;
+color:rgba(51,51,51,1);
+padding: 40rpx 0 40rpx 3%;
+}
+
+.userMesWarp{
+  width: 94%;
+  margin: 0 3%;
+  display: flex;
+  flex-flow: row;
+}
+.userMesList{
+  position: relative;
+  margin-right: 8%;
+}
+.userRole{
+  width: 140rpx;
+  height: 160rpx;
+  vertical-align: middle
+}
+.publicIcon{
+  position: absolute;
+  bottom: -8rpx;
+  left: 36%;
+}
+.roleName{
+  position: absolute;
+  bottom: -60rpx;
+  left: 14%;
+  width: 200rpx;
+  font-size: 24rpx;
+  color: #666;
+}
+.publicIcon image{
+  width: 40rpx;
+  height: 40rpx;
+  vertical-align: middle;
+}
+.userMessageInput{
+  margin-top: 8%;
+  width: 94%;
+  margin:15% 3% 8% 3%;
+}
+.userMessageInput textarea{
+  width: 90%;
+  height:480rpx;
+background:rgba(243,243,243,1);
+border-radius:12rpx;
+  padding: 5%;
+  color: #333;
+  font-size: 28rpx;
+}
+.sendMesBtn{
+   width: 94%;
+  margin: 0 3%;
+}
+.sendMesBtn button{
+  bottom:10%;
+}

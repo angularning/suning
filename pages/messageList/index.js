@@ -11,23 +11,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    setTimeout(function(){
-      console.log('1');
-      wx.showModal({
-        title: '中超级大大大大奖通知',
-        content: '奖品为大大大大大大大大大大大大大美女',
-        success(res) {
-          if (res.confirm) {
-            wx.switchTab({
-              url: '/pages/indexOne/index'
-            });
-          } else if (res.cancel) {
-            // console.log('用户点击取消')
-          }
-        }
-      });
-        
-    },2000)
+    
   },
   getPhoneNumber(e){
       console.log(e)

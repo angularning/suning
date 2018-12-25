@@ -1,5 +1,5 @@
 <view class='authBg'>
- <view class='authBtn' bindtap=''>
+ <view class='authBtn' bindtap='toAuth'>
  <image src='/image/authBtn.png'></image>
  </view>
 </view>

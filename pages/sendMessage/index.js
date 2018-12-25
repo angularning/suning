@@ -4,34 +4,47 @@ Page({
    * 页面的初始数据
    */
   data: {
-    
+    addIcon: '/image/addIconMes.png',
+    desIcon:'/image/desIconMes.png',
+    inputValue:'',
+    roleBo1: true,
+    roleBo2: true,
+    roleBo3: true
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    setTimeout(function(){
-      console.log('1');
-      wx.showModal({
-        title: '中超级大大大大奖通知',
-        content: '奖品为大大大大大大大大大大大大大美女',
-        success(res) {
-          if (res.confirm) {
-            wx.switchTab({
-              url: '/pages/indexOne/index'
-            });
-          } else if (res.cancel) {
-            // console.log('用户点击取消')
-          }
-        }
-      });
-        
-    },2000)
+    
   },
-  getPhoneNumber(e){
-      console.log(e)
+  role1: function () {
+    this.setData({
+      roleBo1: !this.data.roleBo1
+    })
   },
+  role2: function () {
+    this.setData({
+      roleBo2: !this.data.roleBo2
+    })
+  },
+  role3: function () {
+    this.setData({
+      roleBo3: !this.data.roleBo3
+    })
+  },
+  getValues: function(e) {
+    // console.log(e);
+     this.setData({
+       inputValue: e.detail.value
+     })
+  },
+  sendMessage:function(e){
+    let inputValue = this.data.inputValue;
+    console.log(inputValue);
+    console.log(this.data.roleBo1);
+  },
+
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

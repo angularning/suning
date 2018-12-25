@@ -20,7 +20,7 @@
       <image src='/image/index/sendTong.png'></image>
     </view>
   </view>
-  <view class='indexNews'>
+  <view class='indexNews' bindtap='toSendMessage'>
     <view class='indexNewsIcon'>
       <image src='/image/index/xiaoxi@2x.png'></image>
     </view>

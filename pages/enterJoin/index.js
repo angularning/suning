@@ -14,8 +14,11 @@ Page({
   onLoad: function (options) {
     
   },
-  getPhoneNumber(e){
-      console.log(e)
+  enterJoinBtn:function(e){
+      console.log(e);
+      wx.navigateTo({
+        url: '/pages/waitCheck/index',
+      })
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

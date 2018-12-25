@@ -1,12 +1,16 @@
 .userCodeImg {
   margin-top: 30%;
 }
-
-.userCodeImg image {
+.canvasImg{
+padding: 30rpx;
+  border: 2rpx #ccc solid;
+  width: 470rpx;
+  margin-left: 18%;
+}
+.userCodeImg canvas {
   width: 400rpx;
   height: 400rpx;
-  padding: 30rpx;
-  border: 2rpx #ccc solid;
+  
 }
 
 .userCodeWord {

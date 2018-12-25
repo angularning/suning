@@ -1,17 +1,28 @@
+var QRCode = require('../../utils/weapp-qrcode.js')
+var qrcode;
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    
+    getText:'2F89WE09'
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
+    let getText = this.data.getText;
+    qrcode = new QRCode('canvas', {
+      // usingIn: this,
+      text: getText,
+      width: 220,
+      height: 220,
+      colorDark: "#000000",
+      colorLight: "#ffffff",
+      correctLevel: QRCode.CorrectLevel.H,
+    });
   },
   getPhoneNumber(e){
       console.log(e)

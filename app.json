@@ -1,16 +1,18 @@
 {
   "pages": [
-    "pages/waitCheckFail/index",
-    "pages/waitCheck/index",
-    "pages/enterJoin/index",
-    "pages/authenticationPlan/index",
     "pages/authentication/index",
     "pages/loginMobile/index",
-    "pages/loginCode/index",
+    "pages/sendMessage/index",
     "pages/weiLogin/login",
+    "pages/waitCheck/index",
+    "pages/indexOne/index",
     "pages/myShopCode/index",
-    "pages/index/index",
     "pages/start/start",
+    "pages/responsive/responsive",
+    "pages/waitCheckFail/index",
+    "pages/enterJoin/index",
+    "pages/authenticationPlan/index",
+    "pages/loginCode/index",
     "pages/personalManage/index",
     "pages/my/index",
     "pages/balance/index",
@@ -28,7 +30,7 @@
     "selectedColor": "#F5B32A",
     "list": [
       {
-        "pagePath": "pages/index/index",
+        "pagePath": "pages/indexOne/index",
         "text": "首页",
         "iconPath": "image/index/sIndexIconGry.png",
         "selectedIconPath": "image/index/sIndexIconYellow.png"

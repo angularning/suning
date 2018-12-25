@@ -74,9 +74,9 @@ Page({
 
   onGotUserInfo: function(e) {
     console.log(e);
-    wx.navigateTo({
-      url: '/pages/loginMobile/index'
-    })
+    // wx.navigateTo({
+    //   url: '/pages/loginMobile/index'
+    // })
     wx.login({
       success(res) {
         console.log(res)
@@ -88,14 +88,50 @@ Page({
               code: res.code
             },
             success(e) {
+              let d = e.data;
+              console.log(e)
+              if (d.code == 1000000) {
+                if (d.data == "" || d.data == null) {
+                  wx.navigateTo({
+                    url: '/pages/loginMobile/index'
+                  })
+                } else {
+                  if (d.data == 0) {
+                    //有身份
+                    // wx.navigateTo({
+                    //   url: '/pages/index/index'
+                    // });
+                  } else if (d.data == 1) {
+                    //无身份
+                    if (d.data==11) {//未申请认证
+                        wx.navigateTo({
+                        url: '/pages/authentication/index'
+                      });
+                    } else
+                    if (d.data==12) { //申请认证中
+                      wx.navigateTo({
+                        url: '/pages/authentication/index'
+                      });
+                    }else if(d.data==13){//认证失败
 
+                    }else{
+
+                    }
+                  } else if (d.data == "home") {
+                    //已登录已认证去首页
+                    wx.navigateTo({
+                      url: '/pages/index/index'
+                    });
+                  }
+
+                }
+              }
             },
             fail(e) {
               console.log(e);
-              
+
             },
             complete(e) {
-              console.log(e)
             }
           })
         } else {
