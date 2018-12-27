@@ -1,3 +1,5 @@
+
+var hotapp = require('./utils/hotapp');
 App({
     globalData: {
         awardsConfig: {},

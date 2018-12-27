@@ -8,14 +8,14 @@ Page({
     currentTime: 61, //倒计时
     disabled: false, //按钮是否禁用
     phone: '', //获取到的手机栏中的值
-    smCode:''
+    smsCode:''
 
   },
 
   //获取手机栏input中的值
   getCode: function(e) {
     this.setData({
-      smCode:e.detail.value
+      smsCode:e.detail.value
     })
   },
 
@@ -105,28 +105,66 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    console.log(options)
-    this.setData({
-      phone: options.mobile
+    console.log(options);
+    if (!this.data.phone == null || !this.data.phone == '') {
+      this.setData({
+        phone: options.mobile
+      })
+    }
+  },
+  toHotApi:function(){
+    wx.request({
+      url: 'https://wxapi.hotapp.cn/api/post',
+      data: {
+        appkey: 'hotapp622657819',
+        key: "1000",
+        value: '我是内容'
+      },
+      header: {
+        'content-Type': 'application/json'
+      },
+      success: function (res) {
+        console.log(res)
+      }
     })
+
   },
   toAuth: function() {
-    let smCode = this.data.smCode;
+    let smsCode = this.data.smsCode;
     let phone = this.data.phone;
+    if (this.data.phone == null || this.data.phone == ''){
+      wx.showToast({
+        title: '手机号不能为空',
+        icon: 'none',
+      });
+      return
+    }
+    if (smsCode == null || smsCode==''){
+      wx.showToast({
+        title: '验证码不能为空',
+        icon: 'none',
+      });
+      return
+    }
     wx.request({
       url: 'https://jinrongt.jihustore.com/suningApplet/user/register', 
       method: 'post',
       data: {
-        phone: phone,
-        smCode:smCode
+        mobile: phone,
+        smsCode:smsCode
       },
       header: {
         'content-type': 'application/json' // 默认值
       },
       success: (res) => {
-        if(res.code==200){
+        if (res.code == 1000000){
           wx.navigateTo({
             url: '/pages/authentication/index',
+          });
+        } else{
+          wx.showToast({
+            title: '' + res.data.msg,
+            icon: 'none',
           })
         }
       }
