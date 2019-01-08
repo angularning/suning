@@ -1,0 +1,22 @@
+<view>
+    <view class='historyTopTip'>
+我们将于每月25日为您结算上个月的有效收益
+    </view>
+    <view>
+    <view class='balanceListBoxList'>
+    <view class='balanceListBox' wx:for="{{placeBalace}}" id="{{item.id}}" bindtap='toChangeDudao'>
+      <view class='afterClear'>
+        <view class='balanceListBoxName'>{{item.name}}</view>
+        <view class='balanceListBoxCaiFu'>{{item.wealth}}</view>
+      </view>
+      <view class='afterClear'>
+        <view>
+          <text class='balanceListBoxWord'>拥有店员</text>
+          <text class='balanceListBoxNum'>{{item.shopper}}</text>
+        </view>
+        <view class='balanceListBoxLast'>昨日预估收益（财富)</view>
+      </view>
+    </view>
+    </view>
+    </view>
+</view>

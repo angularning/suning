@@ -61,7 +61,11 @@ Page({
   onShow: function() {
 
   },
-
+  toBigPlace:function(){
+    wx.navigateTo({
+      url: '/pages/bigPlace/index',
+    })
+  },
   /**
    * 生命周期函数--监听页面隐藏
    */

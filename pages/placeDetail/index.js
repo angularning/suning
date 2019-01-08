@@ -5,6 +5,31 @@ Page({
    */
   data: {
     currentTab: 0,
+    title:'大区',
+    fuzeName:'校长',
+    shopNum:78,
+    placeBalace: [
+      {
+        "name": "襄阳手机专卖店",
+        "wealth": 1000,
+        "shopper": 20
+      },
+      {
+        "name": "襄阳手机专卖店1",
+        "wealth": 18800,
+        "shopper": 20
+      },
+      {
+        "name": "襄阳手机专卖店2",
+        "wealth": 10000,
+        "shopper": 20
+      },
+      {
+        "name": "襄阳手机专卖店3",
+        "wealth": 1000,
+        "shopper": 280
+      }
+    ],
     balanceList: [{
       "s": 0,
       "name": "百度拉新",
@@ -30,11 +55,21 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-
+    console.log(options)
+    if (options==''||options==null){
+      wx.setNavigationBarTitle({
+        title: '大区'
+      })
+    }else{
+      wx.setNavigationBarTitle({
+        title: options.name
+      })
+    }
+   
   },
-  seeMonthDataBtn:function(){
-    wx.navigateTo({
-      url: '/pages/historyData/index',
+  managePerson:function(){
+    wx.navigateBack({
+      // url:'/pages/'
     })
   },
   /**
@@ -63,6 +98,11 @@ Page({
    */
   onUnload: function() {
 
+  },
+  toSeeMore:function(){
+    wx.navigateTo({
+      url: '/pages/yewuShop/index',
+    })
   },
   //滑动切换
   swiperTab: function(e) {

@@ -1,0 +1,115 @@
+<view style='backgrond:#f4f4f4;'>
+  <view class='moneyTotal'>
+    <view class='kyMoney' bindtap='toBigPlace'>
+      <view class='moneyWord'>负责人</view>
+      <view class='moneyNum'>{{fuzeName}}</view>
+    </view>
+    <view class='monthMoney'>
+      <view class='moneyWord'>业务门店</view>
+      <view class='moneyNum'>{{shopNum}}</view>
+    </view>
+  </view>
+  <view class='seeMonthData afterClear'>
+    <view class='seeMonthData-left'>按月查看数据</view>
+    <view class='seeMonthData-right'>
+      <image src='/image/iconRightGry.png'></image>
+    </view>
+  </view>
+  <view class='threeBtn'>
+    <view class='allS'>
+      <view class='publicNumTip'>累计收益</view>
+      <view class='publicNumBox'>212333</view>
+    </view>
+    <view class='omonthS'>
+      <view class='publicNumTip'>上月收益</view>
+      <view class='publicNumBox'>212333</view>
+    </view>
+    <view class='nmonthS'>
+      <view class='publicNumTip'>本月收益</view>
+      <view class='publicNumBox'>212333</view>
+    </view>
+  </view>
+  <view class='myYeBox'>
+    <view class='myYeTitle'>
+      <view class='wordBg'>
+        <image src='/image/myYeBg.png'></image>
+      </view>
+      <view class='indexWordTitle'>
+        <text>业务量统计</text>
+      </view>
+      <view class='publicRight'>
+        <text>单位：财富</text>
+      </view>
+    </view>
+    <view class='tableChange'>
+      <view class="swiper-tab">
+        <view class="swiper-tab-item {{currentTab==0?'onActive':''}}" data-current="0" bindtap="clickTab">今日</view>
+        <view class="swiper-tab-item {{currentTab==1?'onActive':''}}" data-current="1" bindtap="clickTab">昨日</view>
+        <view class="swiper-tab-item {{currentTab==2?'onActive':''}}" data-current="2" bindtap="clickTab">近7日</view>
+        <view class="swiper-tab-item {{currentTab==3?'onActive':''}}" data-current="3" bindtap="clickTab">近30日</view>
+      </view>
+      <swiper style='height:440rpx;' current="{{currentTab}}" duration="300" bindchange="swiperTab">
+        <swiper-item>
+          <view>
+            <view class='totalShowNum afterClear'>
+              <view class='totalShowNum-left'>预估收益(财富)</view>
+              <view class='totalShowNum-right'>21232</view>
+            </view>
+            <view wx:for='{{balanceList}}' class='balanceList afterClear'>
+              <view class='listSmallImg'>
+                <image src='{{item.url}}'></image>
+                <text class='listSmallWord'>{{item.name}}</text>
+              </view>
+              <view class='listSmallMoney'>{{item.money}}</view>
+            </view>
+            <!-- <view class='seeMonthData afterClear'>
+              <view class='seeMonthData-left'>按月查看数据</view>
+              <view class='seeMonthData-right'>
+                <image src='/image/seeData.png'></image>
+              </view>
+            </view> -->
+          </view>
+        </swiper-item>
+        <swiper-item>
+          <view>222</view>
+        </swiper-item>
+        <swiper-item>
+          <view>333</view>
+        </swiper-item>
+        <swiper-item>
+          <view>444</view>
+        </swiper-item>
+      </swiper>
+    </view>
+
+  </view>
+  <view class="balanceReport">
+    <view class='myYeTitle' style='border-bottom:2rpx #eee solid;padding-top:30rpx;'>
+      <view class='wordBg'>
+        <image src='/image/myYeBg.png'></image>
+      </view>
+      <view class='indexWordTitle'>
+        <text>收益报表</text>
+      </view>
+      <view class='publicRight' style='width:160px;color:#5484FF;text-align:right;margin-right:5%;'>
+        <text>更多门店数据</text>
+      </view>
+    </view>
+  </view>
+  <view class='balanceListBoxList'>
+    <view class='balanceListBox' wx:for="{{placeBalace}}">
+      <view class='afterClear'>
+        <view class='balanceListBoxName'>{{item.name}}</view>
+        <view class='balanceListBoxCaiFu'>{{item.wealth}}</view>
+      </view>
+      <view class='afterClear'>
+        <view>
+          <text class='balanceListBoxWord'>拥有店员</text>
+          <text class='balanceListBoxNum'>{{item.shopper}}</text>
+        </view>
+        <view class='balanceListBoxLast'>昨日预估收益（财富)</view>
+      </view>
+    </view>
+  <view class='lastBoottomBtn'>管理负责人</view>
+  </view>
+</view>

@@ -8,32 +8,21 @@ Page({
     userInfo: {},
     isShow: true
   },
-  goToIndex: function() {
-    console.log('11111')
-    wx.navigateTo({
-      url: '/pages/index/index',
-    });
-  },
+ 
   onLoad: function() {
     console.log('onLoad');
     wx.checkSession({
       success: function() {
         console.log('存在登陆态');
-        // this.goToIndex();
+        wx.navigateBack({
+          url: '/pages/indexOne/index',
+        });
       },
       fail: function() {
         console.log('不存在登陆态');
         // onLogin()
       }
     })
-
-
-
-
-
-
-
-
     var that = this
     // wx.setNavigationBarTitle({
     //   title: wx.getStorageSync('mallName')
@@ -51,32 +40,11 @@ Page({
     }
   },
   onShow: function() {
-    // let that = this
-    // let userInfo = wx.getStorageSync('userInfo')
-    // if (!userInfo) {
-    //   wx.getUserInfo({
-    //     success: res => {
-    //       app.globalData.userInfo = res.userInfo
-    //       this.setData({
-    //         userInfo: res.userInfo,
-    //         isShow: false
-    //       });
-    //       that.goToIndex();
-    //     }
-    //   })
-    // } else {
-    //   that.setData({
-    //     userInfo: userInfo,
-    //     isShow: true
-    //   });
-    // }
+   
   },
 
   onGotUserInfo: function(e) {
     console.log(e);
-    // wx.navigateTo({
-    //   url: '/pages/loginMobile/index'
-    // })
     wx.login({
       success(res) {
         console.log(res)
@@ -90,40 +58,16 @@ Page({
             success(e) {
               let d = e.data;
               console.log(e)
-              if (d.code == 1000000) {
-                if (d.data == "" || d.data == null) {
+              if (d.code == 1000000){
+                wx.setStorageSync('ticket', d.data.ticket)
+                if(d.data.data==''){
                   wx.navigateTo({
-                    url: '/pages/loginMobile/index'
+                    url: '/pages/loginMobile/index',
+                  });
+                }else{
+                  wx.navigateTo({
+                    url: '/pages/indexOne/index',
                   })
-                } else {
-                  if (d.data == 0) {
-                    //有身份
-                    // wx.navigateTo({
-                    //   url: '/pages/index/index'
-                    // });
-                  } else if (d.data == 1) {
-                    //无身份
-                    if (d.data==11) {//未申请认证
-                        wx.navigateTo({
-                        url: '/pages/authentication/index'
-                      });
-                    } else
-                    if (d.data==12) { //申请认证中
-                      wx.navigateTo({
-                        url: '/pages/authentication/index'
-                      });
-                    }else if(d.data==13){//认证失败
-
-                    }else{
-
-                    }
-                  } else if (d.data == "home") {
-                    //已登录已认证去首页
-                    wx.navigateTo({
-                      url: '/pages/index/index'
-                    });
-                  }
-
                 }
               }
             },
@@ -131,8 +75,7 @@ Page({
               console.log(e);
 
             },
-            complete(e) {
-            }
+            complete(e) {}
           })
         } else {
           console.log('登录失败！' + res.errMsg)

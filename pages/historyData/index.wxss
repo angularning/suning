@@ -1,0 +1,10 @@
+.historyTopTip{
+  height:42px;
+  line-height: 42px;
+background:rgba(255,224,106,1);
+text-align: center;
+font-size:12px;
+font-family:PingFangSC-Regular;
+font-weight:400;
+color:rgba(119,119,119,1);
+}

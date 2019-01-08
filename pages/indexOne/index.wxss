@@ -1,7 +1,11 @@
+page{
+  background: #f4f4f4;
+}
 .moneyTotal {
-  background: #f5b32a;
+  background: url('http://p2a60yqmm.bkt.clouddn.com/indexBg.png') no-repeat;
+  background-size: 100%;
   width: 100%;
-  min-height: 300rpx;
+  min-height: 230rpx;
   flex-flow: row;
   display: flex;
   text-align: center;
@@ -12,16 +16,26 @@
   height: 120rpx;
   font-size: 36rpx;
   color: #fff;
-  border-right: 1rpx #fff solid;
-  margin-top: 10%;
+  /* border-right: 1rpx #fff solid; */
+  margin-top: 5%;
+  position: relative;
 }
-
+.kyMoney:after{
+  content: '';
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 20rpx;
+  width: 2rpx;
+  height: 100rpx;
+  background: #fff;
+}
 .monthMoney {
   width: 50%;
   height: 120rpx;
   font-size: 36rpx;
   color: #fff;
-  margin-top: 10%;
+  margin-top: 5%;
 }
 
 .moneyWord {
@@ -73,7 +87,7 @@
 .indexNews {
   background: #fff;
   width: 94%;
-  margin: 26rpx 3%;
+  margin: 20rpx 3%;
   border-radius: 10rpx;
   padding: 20rpx;
   display: flex;
@@ -156,7 +170,7 @@
 .myYeBox {
   background: #fff;
   width: 94%;
-  margin: 26rpx 3%;
+  margin: 20rpx 3%;
   border-radius: 10rpx;
   padding: 20rpx 0;
 }
@@ -164,8 +178,9 @@
 .myYeTitle {
   display: flex;
   flex-flow: row;
-  padding-bottom: 30rpx;
   border-bottom: 1rpx #eee solid;
+  background: #fff;
+  padding: 26rpx 0;
 }
 .wordBg{
   width: 5%;

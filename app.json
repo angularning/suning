@@ -1,8 +1,15 @@
 {
   "pages": [
     "pages/weiLogin/login",
-    "pages/loginCode/index",
+    "pages/historyData/index",
     "pages/indexOne/index",
+    "pages/managePerson/index",
+    "pages/addPerson/index",
+    "pages/placeDetail/index",
+    "pages/yewuShop/index",
+    "pages/loginCode/index",
+    "pages/balance/index",
+    "pages/bigPlace/index",
     "pages/authentication/index",
     "pages/loginMobile/index",
     "pages/sendMessage/index",
@@ -15,7 +22,6 @@
     "pages/authenticationPlan/index",
     "pages/personalManage/index",
     "pages/my/index",
-    "pages/balance/index",
     "pages/userInfo/userInfo",
     "pages/more/more"
   ],

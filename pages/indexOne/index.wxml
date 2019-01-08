@@ -1,15 +1,15 @@
 <view style='backgrond:#f4f4f4;'>
   <view class='moneyTotal'>
-    <view class='kyMoney'>
-      <view class='moneyWord'>可提现财富</view>
+    <view class='kyMoney' bindtap='toBigPlace'>
+      <view class='moneyWord'>启动大区</view>
       <view class='moneyNum'>{{cashableWealth}}</view>
     </view>
     <view class='monthMoney'>
-      <view class='moneyWord'>本月收益（财富）</view>
+      <view class='moneyWord'>业务门店</view>
       <view class='moneyNum'>{{monthWealth}}</view>
     </view>
   </view>
-  <view class='threeBtn'>
+  <!-- <view class='threeBtn'>
     <view class='myShop'>
       <image src='/image/index/myDianma.png'></image>
     </view>
@@ -19,7 +19,7 @@
     <view class='sendTong'>
       <image src='/image/index/sendTong.png'></image>
     </view>
-  </view>
+  </view> -->
   <view class='indexNews' bindtap='toSendMessage'>
     <view class='indexNewsIcon'>
       <image src='/image/index/xiaoxi@2x.png'></image>
@@ -69,5 +69,28 @@
         </view> -->
     </view>
   </view>
-
+  <view style='backgrond:#fff;margin:0 3%;'>
+<view class='myYeTitle'>
+      <view class='wordBg'>
+        <image src='/image/myYeBg.png'></image>
+      </view>
+      <view class='indexWordTitle' style='font-size:28rpx;'>
+        <text style='position:relative;top:6rpx;color:#333;'>分成设置</text>
+      </view>
+      <view class='indexRights' style='margin-top:-10rpx;margin-right:20rpx;'>
+        <image src='/image/iconRights.png'></image>
+      </view>
+    </view>
+    <view class='myYeTitle'>
+      <view class='wordBg'>
+        <image src='/image/myYeBg.png'></image>
+      </view>
+      <view class='indexWordTitle' style='font-size:28rpx;'>
+        <text style='position:relative;top:8rpx;color:#333;'>发送通知</text>
+      </view>
+      <view class='indexRights' style='margin-top:-10rpx;margin-right:20rpx;'>
+        <image src='/image/iconRights.png'></image>
+      </view>
+    </view>
+    </view>
 </view>

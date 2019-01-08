@@ -5,30 +5,17 @@
     <dialog id='dialog' title='提现提醒' content='提现是不可能的' cancelText='取消' confirm='确定' bind:cancelEvent="_cancelEvent" bind:confirmEvent="_confirmEvent">
     </dialog>
   </view>
-
-  <view class='myBalance'>
-    <view class='myBalanceTotal'>
-      <view class='allMoneyShow'>211111</view>
-      <view class='allMoneyTip'>可提现（财富）</view>
-    </view>
-    <view class='balanceBtn'>
-      <view>
-        <button class='smallBtn'>收支明细</button>
-        <button class='smallBtn' bindtap='showDialog'>提现</button>
-      </view>
-    </view>
-  </view>
   <view class='threeBtn'>
     <view class='allS'>
-      <view class='publicNumTip'>累计收益</view>
+      <view class='publicNumTip'>累计收益(元)</view>
       <view class='publicNumBox'>212333</view>
     </view>
     <view class='omonthS'>
-      <view class='publicNumTip'>上月收益</view>
+      <view class='publicNumTip'>上月预估(元)</view>
       <view class='publicNumBox'>212333</view>
     </view>
     <view class='nmonthS'>
-      <view class='publicNumTip'>本月收益</view>
+      <view class='publicNumTip'>本月预估(元)</view>
       <view class='publicNumBox'>212333</view>
     </view>
   </view>
@@ -38,10 +25,10 @@
         <image src='/image/myYeBg.png'></image>
       </view>
       <view class='indexWordTitle'>
-        <text>收益报表</text>
+        <text>业务量统计</text>
       </view>
       <view class='publicRight'>
-        <text>单位：财富</text>
+        <text>单位：笔</text>
       </view>
     </view>
     <view class='tableChange'>
@@ -55,7 +42,7 @@
         <swiper-item>
           <view>
             <view class='totalShowNum afterClear'>
-              <view class='totalShowNum-left'>总收益</view>
+              <view class='totalShowNum-left'>预估收益(元)</view>
               <view class='totalShowNum-right'>21232</view>
             </view>
             <view wx:for='{{balanceList}}' class='balanceList afterClear'>
@@ -65,12 +52,7 @@
               </view>
               <view class='listSmallMoney'>{{item.money}}</view>
             </view>
-            <view class='seeMonthData afterClear'>
-              <view class='seeMonthData-left'>按月查看数据</view>
-              <view class='seeMonthData-right'>
-                <image src='/image/seeData.png'></image>
-              </view>
-            </view>
+
           </view>
         </swiper-item>
         <swiper-item>
@@ -84,6 +66,11 @@
         </swiper-item>
       </swiper>
     </view>
-
+    <view bindtap='seeMonthDataBtn' class='seeMonthData afterClear'>
+      <view class='seeMonthData-left'>按月查看数据</view>
+      <view class='seeMonthData-right'>
+        <image src='/image/iconRightGry.png'></image>
+      </view>
+    </view>
   </view>
 </view>

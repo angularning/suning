@@ -5,6 +5,35 @@ Page({
    */
   data: {
     currentTab: 0,
+    title:'大区',
+    fuzeName:'校长',
+    shopNum:78,
+    placeBalace: [
+      {
+        "id":1,
+        "name": "襄阳手机专卖店",
+        "wealth": 1000,
+        "shopper": 20
+      },
+      {
+        "id": 2,
+        "name": "襄阳手机专卖店1",
+        "wealth": 18800,
+        "shopper": 20
+      },
+      {
+        "id": 3,
+        "name": "襄阳手机专卖店2",
+        "wealth": 10000,
+        "shopper": 20
+      },
+      {
+        "id": 4,
+        "name": "襄阳手机专卖店3",
+        "wealth": 1000,
+        "shopper": 280
+      }
+    ],
     balanceList: [{
       "s": 0,
       "name": "百度拉新",
@@ -30,11 +59,12 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-
+    console.log(options)
   },
-  seeMonthDataBtn:function(){
+  toChangeDudao:function(e){
+    console.log(e.currentTarget.id);
     wx.navigateTo({
-      url: '/pages/historyData/index',
+      url: '/pages/yewuShop/index?data',
     })
   },
   /**
@@ -63,34 +93,6 @@ Page({
    */
   onUnload: function() {
 
-  },
-  //滑动切换
-  swiperTab: function(e) {
-    var that = this;
-    that.setData({
-      currentTab: e.detail.current
-    });
-  },
-  //点击切换
-  clickTab: function(e) {
-    console.log(e)
-    var that = this;
-    if (this.data.currentTab === e.target.dataset.current) {
-      return false;
-    } else {
-      console.log(e.target.dataset.current)
-      that.setData({
-        currentTab: e.target.dataset.current
-      })
-    }
-  },
-
-
-  showDialog: function () {
-    this.dialog.showDialog();
-  },
-  _confirmEvent: function () {
-    this.dialog.hideDialog();
   },
   /**
    * 页面相关事件处理函数--监听用户下拉动作

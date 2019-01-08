@@ -1,0 +1,101 @@
+.placeListBox {
+  display: flex;
+  flex-flow: row;
+  font-size: 28rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(51, 51, 51, 1);
+}
+
+.bigPlaceTitle {
+  display: flex;
+  flex-flow: row;
+  font-size: 32rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(51, 51, 51, 1);
+  height: 100rpx;
+  line-height: 100rpx;
+}
+
+.titlePlace {
+  width: 28%;
+  text-align: center;
+}
+
+.titleNum {
+  width: 42%;
+  text-align: center;
+}
+
+.titleSelect {
+  width: 30%;
+  text-align: center;
+  position: relative;
+}
+
+.selectBox {
+  position: absolute;
+  top: 80rpx;
+  left: 16rpx;
+  width: 200rpx;
+  z-index: 10;
+  background: #fff;
+}
+.downIcon{
+  width: 36rpx;
+  height: 36rpx;
+  line-height: 36rpx;
+  vertical-align: middle;
+  position: relative;
+  top: -2rpx;
+  right: -30rpx;
+}
+.selectedName{
+  height: 50rpx;
+  line-height: 50rpx;
+  border: 2rpx #eee solid;
+  border-radius: 30rpx;
+  width: 88%;
+  margin-top: 24rpx;
+  font-size: 24rpx;
+}
+.selectBox{
+  text-align: left;
+  font-size: 24rpx;
+  margin-left: 24rpx;
+}
+/* .hideContent{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 1;
+  background: #eee;
+} */
+.selectBox view{
+  height: 40rpx;
+  line-height: 40rpx;
+  margin-top: 14rpx;
+}
+
+.placeListBox view {
+  border-bottom: 2rpx #eee solid;
+  height: 100rpx;
+  line-height: 100rpx;
+}
+
+.placeListBoxPlace {
+  width: 28%;
+  text-align: center;
+  position: relative;
+}
+
+.placeListBoxNum {
+  width: 42%;
+  text-align: center;
+}
+
+.placeListBoxMoney {
+  width: 30%;
+  text-align: center;
+}

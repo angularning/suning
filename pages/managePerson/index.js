@@ -5,23 +5,19 @@ Page({
    */
   data: {
     currentTab: 0,
-    balanceList: [{
-      "s": 0,
-      "name": "百度拉新",
-      "money": 10000,
-      "url": "http://www.yqbing.com/page/mobilePage/images/standard/iconBaidulaxin.png"
-    },
+    title:'大区',
+    fuzeName:'校长',
+    shopNum:78,
+    personList: [
       {
-        "s": 0,
-        "name": "百度拉新1",
-        "money": 10000,
-        "url": "http://www.yqbing.com/page/mobilePage/images/standard/iconBaidulaxin.png"
+        "name": "王小帅",
+        "tel": 1236332323,
+        "shopper": 20
       },
       {
-        "s": 0,
-        "name": "百度拉新1",
-        "money": 10000,
-        "url": "http://www.yqbing.com/page/mobilePage/images/standard/iconBaidulaxin.png"
+        "name": "莉莉",
+        "tel": 187772332123,
+        "shopper": 20
       }
     ]
   },
@@ -30,12 +26,13 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-
+    console.log(options)
+   
   },
-  seeMonthDataBtn:function(){
-    wx.navigateTo({
-      url: '/pages/historyData/index',
-    })
+  addPerson:function(){
+      wx.navigateTo({
+        url:'/pages/addPerson/index'
+      })
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

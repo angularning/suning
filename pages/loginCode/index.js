@@ -106,11 +106,9 @@ Page({
    */
   onLoad: function(options) {
     console.log(options);
-    if (!this.data.phone == null || !this.data.phone == '') {
-      this.setData({
-        phone: options.mobile
-      })
-    }
+    this.setData({
+      phone: options.mobile
+    })
   },
   toHotApi:function(){
     wx.request({
@@ -131,7 +129,7 @@ Page({
   },
   toAuth: function() {
     let smsCode = this.data.smsCode;
-    let phone = this.data.phone;
+    var phone = this.data.phone;
     if (this.data.phone == null || this.data.phone == ''){
       wx.showToast({
         title: '手机号不能为空',
@@ -146,12 +144,16 @@ Page({
       });
       return
     }
+
+    var ticket = wx.getStorageSync('ticket')
+    console.log(ticket)
     wx.request({
       url: 'https://jinrongt.jihustore.com/suningApplet/user/register', 
       method: 'post',
       data: {
         mobile: phone,
-        smsCode:smsCode
+        smsCode:smsCode,
+        ticket: ticket
       },
       header: {
         'content-type': 'application/json' // 默认值

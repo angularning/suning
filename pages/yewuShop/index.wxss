@@ -3,9 +3,10 @@ page {
 }
 
 .moneyTotal {
-  background: #f5b32a;
+  background: url('http://p2a60yqmm.bkt.clouddn.com/indexBg.png') no-repeat;
+  background-size: 100%;
   width: 100%;
-  min-height: 300rpx;
+  min-height: 230rpx;
   flex-flow: row;
   display: flex;
   text-align: center;
@@ -16,8 +17,19 @@ page {
   height: 120rpx;
   font-size: 36rpx;
   color: #fff;
-  border-right: 1rpx #fff solid;
-  margin-top: 10%;
+  margin-top: 5%;
+  position: relative;
+}
+
+.kyMoney:after {
+  content: '';
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 20rpx;
+  width: 2rpx;
+  height: 100rpx;
+  background: #fff;
 }
 
 .monthMoney {
@@ -25,7 +37,7 @@ page {
   height: 120rpx;
   font-size: 36rpx;
   color: #fff;
-  margin-top: 10%;
+  margin-top: 5%;
 }
 
 .moneyWord {
@@ -181,7 +193,7 @@ page {
   width: 72%;
   position: relative;
   top: 4rpx;
-  color:#333;
+  color: #333;
 }
 
 .yewuList {
@@ -415,10 +427,7 @@ swiper {
 .seeMonthData-left {
   float: left;
   margin-left: 4%;
-  font-size: 28rpx;
-  font-family:PingFangSC-Regular;
-font-weight:400;
-color:rgba(183,183,183,1);
+  color: #b7b7b7;
 }
 
 .seeMonthData-right {
@@ -429,4 +438,65 @@ color:rgba(183,183,183,1);
 .seeMonthData-right image {
   width: 34rpx;
   height: 34rpx;
+}
+
+.seeMonthData {
+  background: #fff;
+  margin-top: 20rpx;
+}
+
+.balanceReport {
+  background: #fff;
+  margin-top: 20rpx;
+}
+
+.balanceListBox {
+  border-bottom: 2rpx #eee solid;
+  padding: 4%;
+  background: #fff;
+}
+
+.balanceListBoxName {
+  float: left;
+  font-size: 32rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(51, 51, 51, 1);
+  padding-bottom: 16rpx;
+}
+
+.balanceListBoxCaiFu {
+  float: right;
+  font-size: 32rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: #ff9500;
+  padding-bottom: 16rpx;
+}
+.balanceListBoxLast {
+  float: right;
+  font-size: 12px;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(204, 204, 204, 1);
+}
+
+.balanceListBoxWord {
+  float: left;
+  font-size: 24rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(204, 204, 204, 1);
+}
+
+.balanceListBoxNum {
+  float: left;
+  margin-left: 10rpx;
+  font-size: 24rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(51, 51, 51, 1);
+}
+.balanceListBoxList{
+  margin-bottom: 90rpx;
 }
