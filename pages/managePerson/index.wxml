@@ -3,7 +3,7 @@
     <view class='personListRepeat' wx:for="{{personList}}">
       <view class='personList afterClear'>
         <view class='personListNameAndTel fl'>
-          <view class='personListName'>{{item.name}}</view>  
+          <view class='personListName'>{{item.regionName}}</view>  
           <view class='personListTel'>{{item.tel}}</view>  
         </view>
         <view class='fr personListBtn'><image src='/image/iconRemove.png'></image></view>

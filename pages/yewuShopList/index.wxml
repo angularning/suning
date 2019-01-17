@@ -1,0 +1,17 @@
+<view style='backgrond:#f4f4f4;'>
+ <view class='balanceListBoxList'>
+    <view class='balanceListBox' wx:for="{{shopList}}" id="{{item.storeId}}" bindtap='toShopDetail'>
+      <view class='afterClear'>
+        <view class='balanceListBoxName'>{{item.storeName}}</view>
+        <view class='balanceListBoxCaiFu'>{{item.yesterdayWealth}}</view>
+      </view>
+      <view class='afterClear'>
+        <view>
+          <text class='balanceListBoxWord'>拥有店员</text>
+          <text class='balanceListBoxNum'>{{item.clerkNumber}}</text>
+        </view>
+        <view class='balanceListBoxLast'>昨日预估收益（财富)</view>
+      </view>
+    </view>
+    </view>
+</view>

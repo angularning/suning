@@ -1,0 +1,7 @@
+<view style='padding:5% 3%;'>
+  <view class='yi'>请提出您宝贵的体验建议，我们将不断优化您的体验</view>
+  <view class='submitBox'>
+      <textarea bindinput="mesInput"></textarea>
+  </view>
+  <view> <button class='normalBtn' bindtap='subBtn'>提交</button></view>
+</view>

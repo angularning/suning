@@ -1,9 +1,18 @@
 <view style='backgrond-color:#fff;'>
- <view class='publicWrap'>
-  <view class='publicLoginWord'>请输入手机号</view>
-  <input class='publicLoginInput' placeholder='输入手机号' placeholder-style='color:#999;'></input>
-  <view>
-    <button class='normalBtn'>下一步</button>
-  </view>
+ <view>
+    <view class='systemMes' bindtap='toSystme'>
+      <image class='systemMesImg' src='/image/iconXitong.png'></image>
+      <view class='systemMesList'>
+        <view class='systemMesTitle'>系统消息</view>
+        <view class='systemMesWord'>{{oneMes}}</view>
+      </view>
+    </view>
+    <view class='systemMes' bindtap='toUsually'>
+      <image class='systemMesImg' src='/image/iconPutong.png'></image>
+      <view class='systemMesList'>
+        <view class='systemMesTitle'>消息通知</view>
+        <view class='systemMesWord'>{{twoMes}}</view>
+      </view>
+    </view>
  </view>
 </view>

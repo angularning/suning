@@ -1,22 +1,36 @@
 <view>
-    <view class='historyTopTip'>
-我们将于每月25日为您结算上个月的有效收益
-    </view>
-    <view>
+  <view class='historyTopTip'>
+    我们将于每月25日为您结算上个月的有效收益
+  </view>
+  <view>
     <view class='balanceListBoxList'>
-    <view class='balanceListBox' wx:for="{{placeBalace}}" id="{{item.id}}" bindtap='toChangeDudao'>
-      <view class='afterClear'>
-        <view class='balanceListBoxName'>{{item.name}}</view>
-        <view class='balanceListBoxCaiFu'>{{item.wealth}}</view>
-      </view>
-      <view class='afterClear'>
-        <view>
-          <text class='balanceListBoxWord'>拥有店员</text>
-          <text class='balanceListBoxNum'>{{item.shopper}}</text>
+      <view class='balanceListBox' wx:for="{{ placeBalace}}" id="{{item.id}}" >
+        <view class='afterClear balanceListBoxPadding'>
+          <view class='historyListLeft'>
+            <view class='afterClear'>
+              <view class='balanceListBoxName'>{{item.month}}月</view>
+              <view class='balanceListBoxCaiFu'>{{item.wealth}}元</view>
+            </view>
+            <view class='afterClear'>
+              <view>
+                <text class='balanceListBoxWord'>{{item.year}}年</text>
+              </view>
+              <view class='balanceListBoxLast'>结算金额（元)</view>
+            </view>
+          </view>
+          <view class='historyListRight' data-type="{{index==0?'up':'down'}}" bindtap='changeShow'>
+            <image src="{{index==0?up:down}}"></image>
+          </view>
         </view>
-        <view class='balanceListBoxLast'>昨日预估收益（财富)</view>
+        <view class="yeWuList {{index==0?'show':'hide'}} {{showNum+index}}" id="{{item.id}}" data-index="{{index}}">
+          <view class='yeWuListRe' wx:for="{{item.yeWuList}}">
+            <image class='yeWulistIcon' src='/image/suning.png'></image>
+            <text class='yeWuListName'>{{item.name}}</text>
+            <text class='yeWulistWealth'>+{{item.wealth}}</text>
+          </view>
+        </view>
       </view>
+
     </view>
-    </view>
-    </view>
+  </view>
 </view>

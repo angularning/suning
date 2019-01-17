@@ -1,0 +1,117 @@
+<view style='backgrond:#f4f4f4;'>
+  <view class='moneyTotal'>
+      <view class='shopName'>
+      督导 {{storeManager}}
+      </view>
+      <view class='shopper'>
+      店员 {{clerkNumber}}
+      </view>
+      <view class='shopAddress'>
+      地址：{{storeAddress}}
+      </view>
+  </view>
+  <view class='seeMonthData afterClear' bindtap='toSeeMonthData'>
+    <view class='seeMonthData-left'>按月查看数据</view>
+    <view class='seeMonthData-right'>
+      <image src='/image/iconRightGry.png'></image>
+    </view>
+  </view>
+  <view class='threeBtn'>
+    <view class='allS'>
+      <view class='publicNumTip'>累计收益</view>
+      <view class='publicNumBox'>{{totalWealth}}</view>
+    </view>
+    <view class='omonthS'>
+      <view class='publicNumTip'>上月收益</view>
+      <view class='publicNumBox'>{{wealthYes}}</view>
+    </view>
+    <view class='nmonthS'>
+      <view class='publicNumTip'>本月收益</view>
+      <view class='publicNumBox'>{{wealthEarn}}</view>
+    </view>
+  </view>
+  <view class='myYeBox'>
+    <view class='myYeTitle'>
+      <view class='wordBg'>
+        <image src='/image/myYeBg.png'></image>
+      </view>
+      <view class='indexWordTitle'>
+        <text>业务量统计</text>
+      </view>
+      <view class='publicRight'>
+        <text>单位：笔</text>
+      </view>
+    </view>
+    <view class='tableChange'>
+      <view class="swiper-tab">
+        <view class="swiper-tab-item {{currentTab==0?'onActive':''}}" data-current="0" bindtap="clickTab">今日</view>
+        <view class="swiper-tab-item {{currentTab==1?'onActive':''}}" data-current="1" bindtap="clickTab">昨日</view>
+        <view class="swiper-tab-item {{currentTab==2?'onActive':''}}" data-current="2" bindtap="clickTab">近7日</view>
+        <view class="swiper-tab-item {{currentTab==3?'onActive':''}}" data-current="3" bindtap="clickTab">近30日</view>
+      </view>
+      <swiper style='height:440rpx;' current="{{currentTab}}" duration="300" bindchange="swiperTab">
+        <swiper-item>
+          <view>
+            <view class='totalShowNum afterClear'>
+              <view class='totalShowNum-left'>预估收益(财富)</view>
+              <view class='totalShowNum-right'>{{estimatedRevenue0}}</view>
+            </view>
+            <view wx:for='{{balanceList0}}' class='balanceList afterClear'>
+              <view class='listSmallImg'>
+                <image src='{{item.businessIoc}}'></image>
+                <text class='listSmallWord'>{{item.businessName}}</text>
+              </view>
+              <view class='listSmallMoney'>{{item.businessDataNumber}}</view>
+            </view>
+          </view>
+        </swiper-item>
+        <swiper-item>
+          <view>
+            <view class='totalShowNum afterClear'>
+              <view class='totalShowNum-left'>预估收益(财富)</view>
+              <view class='totalShowNum-right'>{{estimatedRevenue1}}</view>
+            </view>
+            <view wx:for='{{balanceList1}}' class='balanceList afterClear'>
+               <view class='listSmallImg'>
+                <image src='{{item.businessIoc}}'></image>
+                <text class='listSmallWord'>{{item.businessName}}</text>
+              </view>
+              <view class='listSmallMoney'>{{item.businessDataNumber}}</view>
+              </view>
+          </view>
+        </swiper-item>
+        <swiper-item>
+          <view>
+            <view class='totalShowNum afterClear'>
+              <view class='totalShowNum-left'>预估收益(财富)</view>
+              <view class='totalShowNum-right'>{{estimatedRevenue2}}</view>
+            </view>
+            <view wx:for='{{balanceList2}}' class='balanceList afterClear'>
+              <view class='listSmallImg'>
+                <image src='{{item.businessIoc}}'></image>
+                <text class='listSmallWord'>{{item.businessName}}</text>
+              </view>
+              <view class='listSmallMoney'>{{item.businessDataNumber}}</view>
+            </view>
+          </view>
+        </swiper-item>
+        <swiper-item>
+        <view>
+            <view class='totalShowNum afterClear'>
+              <view class='totalShowNum-left'>预估收益(财富)</view>
+              <view class='totalShowNum-right'>{{estimatedRevenue3}}</view>
+            </view>
+            <view wx:for='{{balanceList3}}' class='balanceList afterClear'>
+               <view class='listSmallImg'>
+                <image src='{{item.businessIoc}}'></image>
+                <text class='listSmallWord'>{{item.businessName}}</text>
+              </view>
+              <view class='listSmallMoney'>{{item.businessDataNumber}}</view>
+             </view>
+          </view>
+        </swiper-item>
+      </swiper>
+    </view>
+
+  </view>
+</view>

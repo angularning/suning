@@ -1,3 +1,6 @@
+page{
+  background: #f4f4f4;
+}
 .myCenter {
   background: #f5b32a;
   width: 100%;
@@ -36,6 +39,8 @@
 }
 
 .userMenu {
+  position: relative;
+  z-index: 99;
   display: flex;
   flex-direction: column;
   width: 94%;

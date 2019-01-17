@@ -159,6 +159,7 @@ Page({
         'content-type': 'application/json' // 默认值
       },
       success: (res) => {
+        console.log(res)
         if (res.code == 1000000){
           wx.navigateTo({
             url: '/pages/authentication/index',

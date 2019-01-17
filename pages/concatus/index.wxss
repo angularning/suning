@@ -1,0 +1,27 @@
+page {
+  background: #f4f4f4;
+}
+.mobileList{
+  height: 100rpx;
+  line-height: 100rpx;
+  background: #fff;
+  margin-top: 20rpx;
+  font-size:14px;
+font-family:PingFangSC-Regular;
+font-weight:400;
+color:rgba(102,102,102,1);
+}
+.mobileList image{
+  float: right;
+  margin-right: 3%;
+  width: 24px;
+  height: 20px;
+  line-height: 20px;
+  margin-top: 5%;
+  vertical-align: middle;
+}
+.mobileList text{
+  float: left;
+  margin-left: 3%;
+  display: inline-block;
+}

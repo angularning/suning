@@ -1,0 +1,33 @@
+<view>
+  <view>
+    <view class='balanceListBoxList'>
+      <view class='balanceListBox' wx:for="{{ placeBalace}}"  >
+        <view class='afterClear balanceListBoxPadding'>
+          <view class='historyListLeft'>
+            <view class='afterClear'>
+              <view class='balanceListBoxName'>{{item.month}}月</view>
+              <view class='balanceListBoxCaiFu'>+{{item.estimatedRevenue}}财富</view>
+            </view>
+            <view class='afterClear'>
+              <view>
+                <text class='balanceListBoxWord'>{{item.year}}年</text>
+              </view>
+              <view class='balanceListBoxLast'>结算金额（财富)</view>
+            </view>
+          </view>
+          <view class='historyListRight' id="{{item.id}}" data-type="{{index==0?'up':'down'}}" bindtap='changeShow'>
+            <image src="{{uhide==item.id?up:down}}"></image>
+          </view>
+        </view>
+        <view class='yeWuList {{uhide==item.id?"":"hide"}}' id="{{item.id}}" data-index="{{index}}">
+          <view class='yeWuListRe' wx:for="{{item.wealthMonthDetailListModelList}}">
+            <image class='yeWulistIcon' src='{{item.businessIoc}}'></image>
+            <text class='yeWuListName'>{{item.businessName}}</text>
+            <text class='yeWulistWealth'>{{item.businessDataNumber}}</text>
+          </view>
+        </view>
+      </view>
+
+    </view>
+  </view>
+</view>

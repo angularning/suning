@@ -1,0 +1,29 @@
+<view style='padding:5% 3%;'>
+  <view class='quotationTitle'>
+    <image src='/image/iconQ.png'></image>
+    <text style='margin-left:10rpx;'>预估收益是什么意思？</text>
+  </view>
+  <view class='quoCon'>
+    预估收益是指一段时间内，根据您当前的业务完成情况所计算的收益。
+  </view>
+  <view class='quotationTitle'>
+    <image src='/image/iconQ.png'></image>
+    <text style='margin-left:10rpx;'>预估收益与实际结算不符？</text>
+  </view>
+  <view class='quoCon'>
+   <view>1.实际业务操作中，存在“退货”“失效”或其他特殊原因，所以会产生预估与实际结算不符的情况。</view>
+   <view>2.预估收益与实际结算数据存在差异时，请以实际结算为准。</view> 
+  </view>
+  <view class='quotationTitle'>
+    <image src='/image/iconQ.png'></image>
+    <text style='margin-left:10rpx;'>门店督导为什么不能更换？</text>
+  </view>
+  <view class='quoCon'>
+  <view>
+  由于某些业务结算方式的特殊性，当账号变更时，会产生数据对接失败的问题。
+  </view>
+    <view>
+    如果有特殊情况不得不更换门店督导，请联系客服
+    </view>
+  </view>
+</view>

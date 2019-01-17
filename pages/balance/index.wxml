@@ -1,22 +1,17 @@
 <view style='backgrond:#f4f4f4;'>
 
-  <!-- 弹出层 -->
-  <view class="">
-    <dialog id='dialog' title='提现提醒' content='提现是不可能的' cancelText='取消' confirm='确定' bind:cancelEvent="_cancelEvent" bind:confirmEvent="_confirmEvent">
-    </dialog>
-  </view>
   <view class='threeBtn'>
     <view class='allS'>
-      <view class='publicNumTip'>累计收益(元)</view>
-      <view class='publicNumBox'>212333</view>
+      <view class='publicNumTip'>累计收益</view>
+      <view class='publicNumBox'>{{totalWealth}}</view>
     </view>
     <view class='omonthS'>
-      <view class='publicNumTip'>上月预估(元)</view>
-      <view class='publicNumBox'>212333</view>
+      <view class='publicNumTip'>上月收益</view>
+      <view class='publicNumBox'>{{wealthYes}}</view>
     </view>
     <view class='nmonthS'>
-      <view class='publicNumTip'>本月预估(元)</view>
-      <view class='publicNumBox'>212333</view>
+      <view class='publicNumTip'>本月收益</view>
+      <view class='publicNumBox'>{{wealthEarn}}</view>
     </view>
   </view>
   <view class='myYeBox'>
@@ -42,35 +37,71 @@
         <swiper-item>
           <view>
             <view class='totalShowNum afterClear'>
-              <view class='totalShowNum-left'>预估收益(元)</view>
-              <view class='totalShowNum-right'>21232</view>
+              <view class='totalShowNum-left'>预估收益(财富)</view>
+              <view class='totalShowNum-right'>{{estimatedRevenue0}}</view>
             </view>
-            <view wx:for='{{balanceList}}' class='balanceList afterClear'>
+            <view wx:for='{{balanceList0}}' class='balanceList afterClear'>
               <view class='listSmallImg'>
-                <image src='{{item.url}}'></image>
-                <text class='listSmallWord'>{{item.name}}</text>
+                <image src='{{item.businessIoc}}'></image>
+                <text class='listSmallWord'>{{item.businessName}}</text>
               </view>
-              <view class='listSmallMoney'>{{item.money}}</view>
+              <view class='listSmallMoney'>{{item.businessDataNumber}}</view>
             </view>
-
           </view>
         </swiper-item>
         <swiper-item>
-          <view>222</view>
+          <view>
+            <view class='totalShowNum afterClear'>
+              <view class='totalShowNum-left'>预估收益(财富)</view>
+              <view class='totalShowNum-right'>{{estimatedRevenue1}}</view>
+            </view>
+            <view wx:for='{{balanceList1}}' class='balanceList afterClear'>
+               <view class='listSmallImg'>
+                <image src='{{item.businessIoc}}'></image>
+                <text class='listSmallWord'>{{item.businessName}}</text>
+              </view>
+              <view class='listSmallMoney'>{{item.businessDataNumber}}</view>
+              </view>
+          </view>
         </swiper-item>
         <swiper-item>
-          <view>333</view>
+          <view>
+            <view class='totalShowNum afterClear'>
+              <view class='totalShowNum-left'>预估收益(财富)</view>
+              <view class='totalShowNum-right'>{{estimatedRevenue2}}</view>
+            </view>
+            <view wx:for='{{balanceList2}}' class='balanceList afterClear'>
+              <view class='listSmallImg'>
+                <image src='{{item.businessIoc}}'></image>
+                <text class='listSmallWord'>{{item.businessName}}</text>
+              </view>
+              <view class='listSmallMoney'>{{item.businessDataNumber}}</view>
+            </view>
+          </view>
         </swiper-item>
         <swiper-item>
-          <view>444</view>
+        <view>
+            <view class='totalShowNum afterClear'>
+              <view class='totalShowNum-left'>预估收益(财富)</view>
+              <view class='totalShowNum-right'>{{estimatedRevenue3}}</view>
+            </view>
+            <view wx:for='{{balanceList3}}' class='balanceList afterClear'>
+               <view class='listSmallImg'>
+                <image src='{{item.businessIoc}}'></image>
+                <text class='listSmallWord'>{{item.businessName}}</text>
+              </view>
+              <view class='listSmallMoney'>{{item.businessDataNumber}}</view>
+             </view>
+          </view>
         </swiper-item>
       </swiper>
     </view>
-    <view bindtap='seeMonthDataBtn' class='seeMonthData afterClear'>
-      <view class='seeMonthData-left'>按月查看数据</view>
-      <view class='seeMonthData-right'>
-        <image src='/image/iconRightGry.png'></image>
-      </view>
+  
+  </view>
+  <view class='seeMonthData afterClear' style='margin-top:30rpx;backgrond:#fff;' bindtap='toSeeMonthData'>
+    <view class='seeMonthData-left'>按月查看数据</view>
+    <view class='seeMonthData-right'>
+      <image src='/image/iconRightGry.png'></image>
     </view>
   </view>
 </view>

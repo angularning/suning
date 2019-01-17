@@ -1295,6 +1295,6 @@ color:rgba(255,255,255,1);
   font-size: 32rpx;
   color: #fff;
   text-align: center;
-  z-index: 99;
+  z-index: 1999;
   background: #F5B32A;
 }

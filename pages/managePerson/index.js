@@ -1,5 +1,5 @@
+const app=getApp();
 Page({
-
   /**
    * 页面的初始数据
    */
@@ -8,6 +8,7 @@ Page({
     title:'大区',
     fuzeName:'校长',
     shopNum:78,
+    regionId:'',
     personList: [
       {
         "name": "王小帅",
@@ -27,12 +28,34 @@ Page({
    */
   onLoad: function(options) {
     console.log(options)
-   
+      this.setData({
+        regionId: options.regionId
+      })
+    this.regionManagerList();
   },
   addPerson:function(){
       wx.navigateTo({
         url:'/pages/addPerson/index'
       })
+  },
+  regionManagerList:function(){
+    var regionId = Number(this.data.regionId);
+    wx.request({
+      url: app.getUseData.url + 'user/regionManagerList',
+      method: 'post',
+      data: {
+        regionId: regionId
+      },
+      header: app.getUseData.headerConfig,
+      success: (res) => {
+        console.log(res);
+        if (res.data.code == 1000000) {
+            this.setData({
+              personList:res.data.data
+            })
+        }
+      }
+    })
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

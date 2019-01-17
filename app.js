@@ -1,8 +1,13 @@
 var hotapp = require('./utils/hotapp');
+var ticket = wx.getStorageSync('ticket');
+var app = getApp();
 App({
-    globalData: {
+    getUseData: {
       url: 'https://jinrongt.jihustore.com/suningApplet/',
-        awardsConfig: {},
+      headerConfig: {
+        'content-type': 'application/json' // 默认值
+        , 'Cookie': 'ticket=' + ticket
+      },
         runDegs: 0
     }
 });

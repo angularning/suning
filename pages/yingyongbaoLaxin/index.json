@@ -1,0 +1,9 @@
+{
+    "navigationBarTitleText": "应用宝闪电换机",
+    "enablePullDownRefresh": false,
+    "backgroundColor": "#f0f0f0",
+    "backgroundTextStyle": "dark",
+    "usingComponents": {
+      "dialog": "/components/dialog/dialog"
+    }
+}

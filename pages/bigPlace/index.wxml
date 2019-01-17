@@ -10,16 +10,13 @@
         </view>
          
       </view>
-      <!-- <picker class='titleSelect' bindchange="bindPickerChange" value="{{index}}" range="{{gender}}">
-        <view class="picker">今日预估{{detail}}</view>
-      </picker> -->
     </view>
     <view>
       <scroll-view style='height:1200rpx;'>
-      <view class='placeListBox' bindtap='toPlaceDetail' wx:for="{{placeList}}" data-id="{{item.id}}">
-        <view class='placeListBoxPlace'>{{item.place}}</view>
-        <view class='placeListBoxNum'>{{item.num}}</view>
-        <view class='placeListBoxMoney'>{{item.money}}</view>
+      <view class='placeListBox' bindtap='toPlaceDetail' wx:for="{{placeList}}" data-id="{{item.regionId}}" data-name="{{item.regionName}}">
+        <view class='placeListBoxPlace'>{{item.regionName}}</view>
+        <view class='placeListBoxNum'>{{item.storeNumber}}</view>
+        <view class='placeListBoxMoney'>{{item.estimateWealth}}</view>
       </view>
       </scroll-view>
     </view>

@@ -1,0 +1,9 @@
+{
+    "navigationBarTitleText": "百度拉新",
+    "enablePullDownRefresh": false,
+    "backgroundColor": "#f0f0f0",
+    "backgroundTextStyle": "dark",
+    "usingComponents": {
+      "dialog": "/components/dialog/dialog"
+    }
+}

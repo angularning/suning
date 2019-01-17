@@ -406,10 +406,11 @@ swiper {
 }
 
 .seeMonthData {
-  border-top: 2rpx #eee solid;
+  /* border-top: 2rpx #eee solid; */
   width: 100%;
   color: #333;
   padding: 30rpx 0 20rpx 0;
+  background: #fff;
 }
 
 .seeMonthData-left {

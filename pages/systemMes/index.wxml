@@ -1,0 +1,16 @@
+<!--pages/systemMes/index.wxml-->
+<view>
+<block wx:if="{{isShow}}">
+<view class='messageList' wx:for="{{mesList}}">
+    <view class='mesTime'>{{item.time}}</view>
+    <view class='mesCon'>
+    {{item.messageText}}
+    </view>
+</view>
+</block>
+<block wx:else="{{isShow}}">
+<view class='messageList' style='text-align:center;font-size:28rpx;color:#999'>
+   暂无消息
+</view>
+</block>
+</view>

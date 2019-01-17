@@ -14,7 +14,7 @@ Page({
     wx.checkSession({
       success: function() {
         console.log('存在登陆态');
-        wx.navigateBack({
+        wx.navigateTo({
           url: '/pages/indexOne/index',
         });
       },
@@ -45,6 +45,7 @@ Page({
 
   onGotUserInfo: function(e) {
     console.log(e);
+   
     wx.login({
       success(res) {
         console.log(res)
@@ -57,18 +58,27 @@ Page({
             },
             success(e) {
               let d = e.data;
-              console.log(e)
               if (d.code == 1000000){
-                wx.setStorageSync('ticket', d.data.ticket)
-                if(d.data.data==''){
-                  wx.navigateTo({
+                wx.setStorageSync('ticket', d.data.ticket);
+                console.log(d.data.ticket);
+                wx.setStorageSync('loginUserInfo', d.data.data);
+                wx.navigateTo({
+                  url: '/pages/indexOne/index',
+                })
+                if(d.data.data==''||d.data.data==null){
+                  wx.navigateBack({
                     url: '/pages/loginMobile/index',
                   });
                 }else{
-                  wx.navigateTo({
+                  wx.switchTab({
                     url: '/pages/indexOne/index',
                   })
                 }
+              }else{
+                wx.showToast({
+                  title: '' + d.msg,
+                  icon: 'none',
+                })
               }
             },
             fail(e) {

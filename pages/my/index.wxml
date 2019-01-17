@@ -2,32 +2,41 @@
   <view class='myCenter'>
     <view class='userBox'>
       <view class='userImg'>
-        <image src='/image/defautLogo.png'></image>
+        <image src='{{userPic}}'></image>
       </view>
       <view class='userSetName'>
         <view class='userSetNames'>
-          请设置昵称
+          {{userName}}   <text style='font-size:16px;'>{{userRoles}}</text>
         </view>
-        <view class='userRole'>大客户</view>
+        <view class='userRole'>{{userSome}}</view>
       </view>
-      <view class='publicRight'>
+      <!-- <view class='publicRight'>
         <image src='/image/userRight.png'></image>
-      </view>
+      </view> -->
     </view>
 
 
   </view>
   <view class='userMenu'>
-    <view class='userMenuBox'>
+    <view class='userMenuBox' bindtap='toMobile'>
       <view class='publicHasIcon'>
-        <image src='/image/iconDianma.png'></image>
-        <text>我的店码</text>
+        <image src='/image/iconMobile.png'></image>
+        <text>联系我们</text>
       </view>
       <view class='publicIconRight'>
         <image src='/image/iconSmallRight.png'></image>
       </view>
     </view>
-    <view class='userMenuBox'>
+    <view class='userMenuBox' bindtap='toQuo'>
+      <view class='publicHasIcon'>
+        <image src='/image/iconXin.png'></image>
+        <text>常见问题</text>
+      </view>
+      <view class='publicIconRight'>
+        <image src='/image/iconSmallRight.png'></image>
+      </view>
+    </view>
+    <view class='userMenuBox' bindtap='toSubmitMes'>
       <view class='publicHasIcon'>
         <image src='/image/iconYj.png'></image>
         <text>意见反馈</text>
@@ -36,15 +45,7 @@
         <image src='/image/iconSmallRight.png'></image>
       </view>
     </view>
-    <view class='userMenuBox'>
-      <view class='publicHasIcon'>
-        <image src='/image/iconXin.png'></image>
-        <text>新手引导</text>
-      </view>
-      <view class='publicIconRight'>
-        <image src='/image/iconSmallRight.png'></image>
-      </view>
-    </view>
+    
   </view>
   <view class='logout'>
     <button>退出账户</button>

@@ -1,196 +1,196 @@
-import "../../utils/util.js"
+// import "../../utils/util.js"
 const app = getApp();
 Page({
   /**
    * 页面的初始数据
    */
   data: {
-    gender: ['今日预估','今日实际'],
+    gender: ['今日收益'],
     iconTrue:true,
     downIcon: '/image/selectIcon.png',
     upIcon:'/image/selectUpIcon.png',
     detail:'',
-    selectName:'今日预估',
+    selectName:'今日收益',
     selectList:[
-      { name: "今日预估", value:"今日预估" },
-      { name: "今日实际", value:"今日实际"}
+      { name: "今日收益", value:"今日收益" },
+      // { name: "今日实际", value:"今日实际"}
     ],
     placeList: [
-      {
-        "place": "北京",
-        "num": "100",
-        "money": "12333"
-      },
-      {
-        "place": "北京",
-        "num": "100",
-        "money": "12333"
-      },
-      {
-        "place": "北京",
-        "num": "100",
-        "money": "12333"
-      },
-      {
-        "place": "北京",
-        "num": "100",
-        "money": "12333"
-      },
-      {
-        "place": "北京",
-        "num": "100",
-        "money": "12333"
-      },
-      {
-        "place": "北京",
-        "num": "100",
-        "money": "12333"
-      },
-      {
-        "place": "北京",
-        "num": "100",
-        "money": "12333"
-      },
-      {
-        "place": "北京",
-        "num": "100",
-        "money": "12333"
-      },
-      {
-        "place": "北京",
-        "num": "100",
-        "money": "12333"
-      },
-      {
-        "place": "北京",
-        "num": "100",
-        "money": "12333"
-      },
-      {
-        "place": "北京",
-        "num": "100",
-        "money": "12333"
-      },
-      {
-        "place": "北京",
-        "num": "100",
-        "money": "12333"
-      },
-      {
-        "place": "北京",
-        "num": "100",
-        "money": "12333"
-      },
-      {
-        "place": "北京",
-        "num": "100",
-        "money": "12333"
-      },
-      {
-        "place": "北京",
-        "num": "100",
-        "money": "12333"
-      },
-      {
-        "place": "北京",
-        "num": "100",
-        "money": "12333"
-      },
-      {
-        "place": "北京",
-        "num": "100",
-        "money": "12333"
-      },
-      {
-        "place": "北京",
-        "num": "100",
-        "money": "12333"
-      },
-      {
-        "place": "北京",
-        "num": "100",
-        "money": "12333"
-      },
-      {
-        "place": "北京",
-        "num": "100",
-        "money": "12333"
-      },
-      {
-        "place": "北京",
-        "num": "100",
-        "money": "12333"
-      },
-      {
-        "place": "北京",
-        "num": "100",
-        "money": "12333"
-      },
-      {
-        "place": "北京",
-        "num": "100",
-        "money": "12333"
-      },
-      {
-        "place": "北京",
-        "num": "100",
-        "money": "12333"
-      },
-      {
-        "place": "北京",
-        "num": "100",
-        "money": "12333"
-      },
-      {
-        "place": "北京",
-        "num": "100",
-        "money": "12333"
-      },
-      {
-        "place": "北京",
-        "num": "100",
-        "money": "12333"
-      },
-      {
-        "place": "北京",
-        "num": "100",
-        "money": "12333"
-      },
-      {
-        "place": "北京",
-        "num": "100",
-        "money": "12333"
-      },
-      {
-        "place": "北京",
-        "num": "100",
-        "money": "12333"
-      },
-      {
-        "place": "北京",
-        "num": "100",
-        "money": "12333"
-      },
-      {
-        "place": "北京",
-        "num": "100",
-        "money": "12333"
-      },
-      {
-        "place": "北京",
-        "num": "100",
-        "money": "12333"
-      },
-      {
-        "place": "北京",
-        "num": "100",
-        "money": "12333"
-      },
-      {
-        "place": "北京",
-        "num": "100",
-        "money": "12333"
-      }
+      // {
+      //   "place": "北京",
+      //   "num": "100",
+      //   "money": "12333"
+      // },
+      // {
+      //   "place": "北京",
+      //   "num": "100",
+      //   "money": "12333"
+      // },
+      // {
+      //   "place": "北京",
+      //   "num": "100",
+      //   "money": "12333"
+      // },
+      // {
+      //   "place": "北京",
+      //   "num": "100",
+      //   "money": "12333"
+      // },
+      // {
+      //   "place": "北京",
+      //   "num": "100",
+      //   "money": "12333"
+      // },
+      // {
+      //   "place": "北京",
+      //   "num": "100",
+      //   "money": "12333"
+      // },
+      // {
+      //   "place": "北京",
+      //   "num": "100",
+      //   "money": "12333"
+      // },
+      // {
+      //   "place": "北京",
+      //   "num": "100",
+      //   "money": "12333"
+      // },
+      // {
+      //   "place": "北京",
+      //   "num": "100",
+      //   "money": "12333"
+      // },
+      // {
+      //   "place": "北京",
+      //   "num": "100",
+      //   "money": "12333"
+      // },
+      // {
+      //   "place": "北京",
+      //   "num": "100",
+      //   "money": "12333"
+      // },
+      // {
+      //   "place": "北京",
+      //   "num": "100",
+      //   "money": "12333"
+      // },
+      // {
+      //   "place": "北京",
+      //   "num": "100",
+      //   "money": "12333"
+      // },
+      // {
+      //   "place": "北京",
+      //   "num": "100",
+      //   "money": "12333"
+      // },
+      // {
+      //   "place": "北京",
+      //   "num": "100",
+      //   "money": "12333"
+      // },
+      // {
+      //   "place": "北京",
+      //   "num": "100",
+      //   "money": "12333"
+      // },
+      // {
+      //   "place": "北京",
+      //   "num": "100",
+      //   "money": "12333"
+      // },
+      // {
+      //   "place": "北京",
+      //   "num": "100",
+      //   "money": "12333"
+      // },
+      // {
+      //   "place": "北京",
+      //   "num": "100",
+      //   "money": "12333"
+      // },
+      // {
+      //   "place": "北京",
+      //   "num": "100",
+      //   "money": "12333"
+      // },
+      // {
+      //   "place": "北京",
+      //   "num": "100",
+      //   "money": "12333"
+      // },
+      // {
+      //   "place": "北京",
+      //   "num": "100",
+      //   "money": "12333"
+      // },
+      // {
+      //   "place": "北京",
+      //   "num": "100",
+      //   "money": "12333"
+      // },
+      // {
+      //   "place": "北京",
+      //   "num": "100",
+      //   "money": "12333"
+      // },
+      // {
+      //   "place": "北京",
+      //   "num": "100",
+      //   "money": "12333"
+      // },
+      // {
+      //   "place": "北京",
+      //   "num": "100",
+      //   "money": "12333"
+      // },
+      // {
+      //   "place": "北京",
+      //   "num": "100",
+      //   "money": "12333"
+      // },
+      // {
+      //   "place": "北京",
+      //   "num": "100",
+      //   "money": "12333"
+      // },
+      // {
+      //   "place": "北京",
+      //   "num": "100",
+      //   "money": "12333"
+      // },
+      // {
+      //   "place": "北京",
+      //   "num": "100",
+      //   "money": "12333"
+      // },
+      // {
+      //   "place": "北京",
+      //   "num": "100",
+      //   "money": "12333"
+      // },
+      // {
+      //   "place": "北京",
+      //   "num": "100",
+      //   "money": "12333"
+      // },
+      // {
+      //   "place": "北京",
+      //   "num": "100",
+      //   "money": "12333"
+      // },
+      // {
+      //   "place": "北京",
+      //   "num": "100",
+      //   "money": "12333"
+      // },
+      // {
+      //   "place": "北京",
+      //   "num": "100",
+      //   "money": "12333"
+      // }
     ]
   },
 
@@ -198,7 +198,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.getDataList(0);
+    this.toRequestData(1);
   },
   chooseSelect:function(e){
     this.setData({
@@ -208,7 +208,7 @@ Page({
   changeSelect:function(e){
     console.log(e);
     //点击下拉框的时候去做请求
-    if (e.currentTarget.dataset.name=='今日预估'){
+    if (e.currentTarget.dataset.name=='今日收益'){
       this.toRequestData(1)
     }
     this.setData({
@@ -221,16 +221,23 @@ Page({
   },
   toPlaceDetail: function (e) {
     let id = e.currentTarget.dataset.id;
-    
+    let name = e.currentTarget.dataset.name;
+    wx.navigateTo({
+      url: '/pages/placeDetail/index?id='+id+'&name='+name,
+    })
   },
   toRequestData(value){
     wx.request({
-      url: app.globalData.url+'home',
-      data:{
-        value: value
-      },
-      success:function(data){
-          console.log(data)
+      url: app.getUseData.url +'store/regionList',
+      data:{},
+      header: app.getUseData.headerConfig,
+      success: (res) => {
+        console.log(res);
+        if (res.data.code == 1000000) {
+          this.setData({
+            placeList: res.data.data
+          })
+        }
       }
     })
   },
@@ -242,7 +249,7 @@ Page({
   },
   watchSelectName:function(){
     var selectName = this.data.watchSelectName;
-    if (selectName=='今日实际'){
+    if (selectName=='今日收益'){
       console.log('1222');
     }
   },

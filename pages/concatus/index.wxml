@@ -1,0 +1,10 @@
+<view>
+<view>
+<view data-num="158123123123" class='mobileList' bindtap='toMobile'>
+  <text>158123123123</text>  <image src='/image/iconDianhua.png'></image>
+</view>
+<view data-num="158123123123" class='mobileList' bindtap='toMobile'>
+  <text>158123123123</text>  <image src='/image/iconDianhua.png'></image>
+</view>
+</view>
+</view>

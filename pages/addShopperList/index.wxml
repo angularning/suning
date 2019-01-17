@@ -1,0 +1,12 @@
+<view style='margin-top:20rpx;'>
+ <view class='balanceListBox' bindtap='toShopperDetail' wx:for="{{dianyuan3List}}" data-id="{{item.userId}}" data-name="{{item.userName}}">
+      <view class='afterClear'>
+        <view class='balanceListBoxName'>{{item.userName}}</view>
+        <view class='balanceListBoxCaiFu'>{{item.userWealth}}</view>
+      </view>
+      <view class='afterClear'>
+        <view class='balanceListBoxLast'>当前预估收益（财富)</view>
+      </view>
+    </view>
+  <view class='lastBoottomBtn' bindtap='addShopper'>添加店员</view>
+</view>

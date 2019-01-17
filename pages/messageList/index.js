@@ -1,5 +1,5 @@
+const app=getApp();
 Page({
-
   /**
    * 页面的初始数据
    */
@@ -11,10 +11,56 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
+   this.getMesList();
+    this.getMesList1();
   },
-  getPhoneNumber(e){
-      console.log(e)
+  getMesList:function(){
+    wx.request({
+      url: app.getUseData.url + 'message/firstMessage ', //
+      method: 'post',
+      data: {
+        type: 1
+      },
+      header: app.getUseData.headerConfig,
+      success: (res) => {
+        console.log(res);
+        if (res.data.code == 1000000){
+          this.setData({
+            oneMes: res.data.data.messageText
+          })
+        }
+      }
+    })
+  },
+
+  getMesList1: function () {
+    wx.request({
+      url: app.getUseData.url + 'message/firstMessage ', //
+      method: 'post',
+      data: {
+        type: 2
+      },
+      header: app.getUseData.headerConfig,
+      success: (res) => {
+        console.log(res);
+        if (res.data.code == 1000000) {
+          this.setData({
+            twoMes: res.data.data.messageText
+          })
+        }
+      }
+    })
+  },
+  toSystme:function(){
+    wx.navigateTo({
+      url: '/pages/systemMes/index',
+    });
+  },
+
+  toUsually: function () {
+    wx.navigateTo({
+      url: '/pages/usuallyMes/index',
+    });
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

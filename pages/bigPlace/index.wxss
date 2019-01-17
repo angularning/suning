@@ -19,12 +19,12 @@
 }
 
 .titlePlace {
-  width: 28%;
+  width: 42%;
   text-align: center;
 }
 
 .titleNum {
-  width: 42%;
+  width: 30%;
   text-align: center;
 }
 
@@ -85,13 +85,13 @@
 }
 
 .placeListBoxPlace {
-  width: 28%;
+  width: 40%;
   text-align: center;
   position: relative;
 }
 
 .placeListBoxNum {
-  width: 42%;
+  width: 30%;
   text-align: center;
 }
 

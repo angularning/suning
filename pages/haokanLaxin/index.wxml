@@ -1,0 +1,59 @@
+<view class='laxinWrap'>
+  <view class='publicTop'>
+    <view class='imgErLeft'>
+      <view class='erStatus1'>
+        <view>点击申请</view>
+        <view style='margin-top:20px;'>拉新资格</view>
+      </view>
+      <view class='erStatus2'>
+        <image src='/image/erCode.png'></image>
+        <view class='downTip'>下载好看视频</view>
+      </view>
+    </view>
+    <view class='dataRight'>
+      <view class='dataTitle'>本月拉新数据</view>
+      <view class='dataRightWrap'>
+        <view class='laxinList' style='margin-right:5px;'>
+          <view class='laxinListTop'>全额结算数</view>
+          <view class='laxinListMiddle'>(截止2天前）</view>
+          <view class='laxinListNum'>0</view>
+        </view>
+        <view class='laxinList' >
+          <view class='laxinListTop'>半额结算数</view>
+          <view class='laxinListMiddle'>(截止2天前）</view>
+          <view class='laxinListNum'>0</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='publicImg'>
+    <image src='http://p2a60yqmm.bkt.clouddn.com/haokanWordImgTip.png'></image>
+  </view>
+  <view class='publicSea'>
+    <image src='http://p2a60yqmm.bkt.clouddn.com/taoLaxinSea.png'></image>
+  </view>
+  <view class='blueBg'>
+    <view class='whiteBg'>
+      <view class='publicImgTitle'>
+        <image src='http://p2a60yqmm.bkt.clouddn.com/haokanlaxinImg.png'></image>
+      </view>
+      <view>
+        <video src='http://pbzxefl02.bkt.clouddn.com/baiduVideo.mp4'></video>
+      </view>
+      <view class='publicImgBottom'>
+        <image src='http://p2a60yqmm.bkt.clouddn.com/haokanImg1.png'></image>
+      </view>
+    </view>
+  </view>
+  <view class="publicBoxRule">
+    <image class='activeImg' src="http://p2a60yqmm.bkt.clouddn.com/huodongguize.png"></image>
+    <view class="publicBoxRuleBox">
+      <view>1、百度、好看视频拉新的数据周期为2天；</view>
+      <view>2、百度、好看视频的拉新审核标准为下载登陆后扫码，分为纯新用户和半新用户，纯新用户全额结算，半新用户按50%价格结算；</view>
+      <view>3、百度、好看视频的拉新，仅限在门店所在地市内推广，二维码严禁在微信、微博等线上传播，严禁跨地市扫码安装，如果存在大量线上刷机行为，一经发现，立刻扣除所有收益，并剥夺拉新资格；</view>
+      <view>4、由于百度、好看操作流程不长不难，但有重点要注意部分，各位一定要仔细观看操作视频，严格遵守流程中的注意事项；</view>
+      <view>5、如果下载的好看视频没有“扫一扫”功能，则证明安装包下载错误，请仔细观看操作视频，严格遵守操作流程。</view>
+      <view>6、连续14天未成功拉新，将被取消拉新资格，现有二维码将失效！</view>
+    </view>
+  </view>
+</view>

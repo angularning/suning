@@ -1,0 +1,145 @@
+page {
+  background: #fff;
+}
+
+.laxinWrap {
+  width: 100%;
+}
+
+.publicTop {
+  padding: 0 2%;
+  display: flex;
+  margin-top:30px;
+}
+
+.imgErLeft {
+  margin-left:4%;
+  width: 200px;
+  min-height: 440rpx;
+  display: inline-block;
+  background: #FFBF29;
+  text-align: center;
+  border-radius: 4px;
+}
+
+.dataRight {
+  display: inline-block;
+  width: 200px;
+  margin-left: 20px;
+}
+.dataRight image{
+ width:160px;
+height:140px;
+margin-top:50px;
+}
+.erStatus1 {
+  /* display: none; */
+  width: 200px;
+  margin-top: 30%;
+  font-size: 50rpx;
+  color: #fff;
+  padding: 10px 0;
+  font-weight: bold;
+}
+
+.erStatus2 {
+  width: 200px;
+  text-align: center;
+}
+
+.erStatus2 image {
+  width: 170px;
+  height: 170px;
+  margin-top: 16px;
+}
+.downTip{
+  font-size: 40rpx;
+  color: #fff;
+  padding: 12px 0;
+}
+.dataTitle{
+  font-size:18px;
+font-family:PingFangSC-Medium;
+font-weight:500;
+color:rgba(51,51,51,1);
+margin-bottom: 20px;
+}
+
+.laxinList{
+  display: inline-block;
+  margin-bottom: 10px;
+}
+.laxinListTop{
+  font-size:12px;
+font-family:PingFangSC-Medium;
+font-weight:500;
+color:rgba(102,102,102,1);
+}
+.laxinListMiddle{
+  padding:10px 0;
+  font-size:12px;
+font-family:PingFangSC-Regular;
+font-weight:400;
+color:rgba(153,153,153,1);
+}
+.laxinListNum{
+  font-size:12px;
+font-family:PingFangSC-Regular;
+font-weight:400;
+color:rgba(255,80,110,1);
+}
+.publicImg{
+  text-align: center;
+  margin-top: 30px;
+}
+.publicImg image{
+  width: 90%;
+  margin:30px 0;
+}
+.publicSea{
+  width: 100%;
+  margin-top: 30px;
+}
+.publicSea image{
+  width: 100%;
+  height: 60px;
+  vertical-align: bottom;
+}
+.blueBg{
+  background: #FFBF29;
+  padding: 0 4% 100px 4%;
+  text-align: center;
+}
+.whiteBg{
+  width: 100%;
+  background: #fff;
+  border-radius: 10px;
+  padding-bottom: 40px;
+}
+.publicImgTitle image{
+  height: 120px;
+  padding: 20px 0;
+}
+.publicImgBottom image{
+   height: 110px;
+  padding: 20px 0;
+}
+.activeImg{
+  width:100%;
+  text-align: center;
+  height: 100px;
+}
+.publicBoxRule{
+  margin-top:-74px;
+}
+.publicBoxRuleBox{
+  width: 96%;
+  margin: 0 2%;
+  padding-bottom: 50px;
+}
+.publicBoxRuleBox view{
+  font-size:14px;
+font-family:PingFangSC-Regular;
+font-weight:400;
+color:rgba(51,51,51,1);
+}

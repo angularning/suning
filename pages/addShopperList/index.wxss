@@ -1,0 +1,53 @@
+page{
+  background: #f4f4f4;
+}
+.balanceListBox {
+  border-bottom: 2rpx #eee solid;
+  padding: 4%;
+  background: #fff;
+}
+
+.balanceListBoxName {
+  float: left;
+  font-size: 32rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(51, 51, 51, 1);
+  padding-bottom: 16rpx;
+}
+
+.balanceListBoxCaiFu {
+  float: right;
+  font-size: 32rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: #ff9500;
+  padding-bottom: 16rpx;
+}
+.balanceListBoxLast {
+  float: right;
+  font-size: 12px;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(204, 204, 204, 1);
+}
+
+.balanceListBoxWord {
+  float: left;
+  font-size: 24rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(204, 204, 204, 1);
+}
+
+.balanceListBoxNum {
+  float: left;
+  margin-left: 10rpx;
+  font-size: 24rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(51, 51, 51, 1);
+}
+.balanceListBoxList{
+  margin-bottom: 90rpx;
+}
