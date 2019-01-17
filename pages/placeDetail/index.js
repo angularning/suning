@@ -6,7 +6,7 @@ Page({
   data: {
     currentTab: 0,
     title:'大区',
-    fuzeName:'',
+    regionManager:'',
     shopNum:78,
     userId:'',
     regionId:'',
@@ -42,7 +42,7 @@ Page({
     const loginUserInfo = wx.getStorageSync('loginUserInfo');
     console.log(loginUserInfo);
     this.setData({
-      fuzeName: loginUserInfo.userName,
+      // fuzeName: loginUserInfo.userName,
       userId: loginUserInfo.userId
     });
     this.toRequestShopList(0);
@@ -76,7 +76,8 @@ Page({
             totalWealth: res.data.data.totalWealth,
             wealthEarn: res.data.data.wealthEarn,
             wealthYes: res.data.data.storeNumber,
-            placeBalace: res.data.data.storeInfoModelList
+            placeBalace: res.data.data.storeInfoModelList,
+            regionManager: res.data.data.regionManager
           })
         }
       }

@@ -3,13 +3,13 @@
     <view class='personListRepeat' wx:for="{{personList}}">
       <view class='personList afterClear'>
         <view class='personListNameAndTel fl'>
-          <view class='personListName'>{{item.regionName}}</view>  
-          <view class='personListTel'>{{item.tel}}</view>  
+          <view class='personListName'>{{item.userName}}</view>  
+          <view class='personListTel'>{{item.userPhone}}</view>  
         </view>
-        <view class='fr personListBtn'><image src='/image/iconRemove.png'></image></view>
+        <view class='fr personListBtn' bindtap='delPerson' data-id="{{item.userId}}"><image src='/image/iconRemove.png'></image></view>
       </view>
     </view>
   <view class='personTip'>最多可添加2名负责人</view>
-    <view bindtap='addPerson' class='lastBoottomBtn'>添加(1/2)</view>
+    <view bindtap='addPerson'  class='lastBoottomBtn'>添加({{changdu}}/2)</view>
   </view>
 </view>

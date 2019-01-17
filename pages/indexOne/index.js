@@ -59,7 +59,9 @@ Page({
    */
   onLoad: function(options) {
     let that = this;
-    var ticket = wx.getStorageSync('ticket')
+    var ticket = wx.getStorageSync('ticket');
+    const a = 15811239162;
+    console.log(a.toLocaleString())
     wx.request({
       url: app.getUseData.url + 'home',
       method: 'post',

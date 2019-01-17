@@ -2,7 +2,7 @@
   <view class='moneyTotal'>
     <view class='kyMoney' bindtap='toBigPlace'>
       <view class='moneyWord'>负责人</view>
-      <view class='moneyNum'>{{fuzeName}}</view>
+      <view class='moneyNum'>{{regionManager}}</view>
     </view>
     <view class='monthMoney'>
       <view class='moneyWord'>业务门店</view>

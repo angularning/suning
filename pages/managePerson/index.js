@@ -9,6 +9,7 @@ Page({
     fuzeName:'校长',
     shopNum:78,
     regionId:'',
+    changdu:'',
     personList: [
       {
         "name": "王小帅",
@@ -34,9 +35,45 @@ Page({
     this.regionManagerList();
   },
   addPerson:function(){
+    if (Number(this.data.changdu) > 2 || (Number(this.data.changdu)==2)){
+      wx.showToast({
+        title: '最多只能添加两个负责人',
+        icon: 'none'
+      });
+      return
+    }
       wx.navigateTo({
-        url:'/pages/addPerson/index'
+        url: '/pages/addPerson/index?regionId=' + this.data.regionId
       })
+  },
+  delPerson:function(e){
+    if (Number(this.data.changdu)<2){
+      wx.showToast({
+        title: '至少保存一个负责人',
+        icon: 'none'
+      });
+      return
+    }
+    console.log(e)
+    const userId = e.currentTarget.dataset.id;
+    wx.request({
+      url: app.getUseData.url + 'user/delRegionManager',
+      method: 'post',
+      data: {
+        userId: userId
+      },
+      header: app.getUseData.headerConfig,
+      success: (res) => {
+        console.log(res);
+        if (res.data.code == 1000000) {
+            wx.showToast({
+              title: '删除成功',
+              icon:'none'
+            });
+          this.regionManagerList();
+        }
+      }
+    })
   },
   regionManagerList:function(){
     var regionId = Number(this.data.regionId);
@@ -51,7 +88,8 @@ Page({
         console.log(res);
         if (res.data.code == 1000000) {
             this.setData({
-              personList:res.data.data
+              personList:res.data.data,
+              changdu: res.data.data.length
             })
         }
       }
