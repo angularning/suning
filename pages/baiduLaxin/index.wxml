@@ -1,17 +1,21 @@
 <view class='laxinWrap'>
   <view class='publicTop'>
     <view class='imgErLeft'>
-      <view class='erStatus1'>
+      <view class='erStatus1' bindtap='toRequestEr' wx:if="{{isShow1}}">
         <view>点击申请</view>
         <view style='margin-top:20px;'>拉新资格</view>
       </view>
-      <view class='erStatus2'>
-        <image src='/image/erCode.png'></image>
+      <view class='erStatus2' wx:if="{{isShow2}}">
+        <image src='{{baiduEr}}'></image>
         <view class='downTip'>下载百度APP</view>
+      </view>
+      <view class='erStatus1' wx:if="{{isShow3}}"> 
+        <view>申请成功</view>
+        <view style='margin-top:20px;'>审核周期24h</view>
       </view>
     </view>
     <view class='dataRight'>
-      <view class='dataTitle'>本月拉新数据</view>
+      <!-- <view class='dataTitle'>本月拉新数据</view>
       <view class='dataRightWrap'>
         <view class='laxinList' style='margin-right:5px;'>
           <view class='laxinListTop'>全额结算数</view>
@@ -23,7 +27,7 @@
           <view class='laxinListMiddle'>(截止2天前）</view>
           <view class='laxinListNum'>0</view>
         </view>
-      </view>
+      </view> -->
     </view>
   </view>
   <view class='publicImg'>

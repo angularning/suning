@@ -4,7 +4,11 @@ Page({
    * 页面的初始数据
    */
   data: {
-    currentTab: 0
+    currentTab: 0,
+    isShow1:true,
+    isShow2: false,
+    isShow3:false,
+    baiduEr:''
   },
 
   /**
@@ -21,6 +25,47 @@ Page({
       success: (res) => {
         console.log(res);
         if (res.data.code == 1000000) {
+          if (res.data.data.status==-1){
+            this.setData({
+              isShow1:true,
+              isShow2: false,
+              isShow3:false
+            })
+          } else if (res.data.data.status == 1) {
+            this.setData({
+              isShow1: false,
+              isShow2: false,
+              isShow3: true
+            })
+          } else if (res.data.data.status == 2) {
+            this.setData({
+              isShow1: false,
+              isShow2: true,
+              isShow3: false,
+              baiduEr: res.data.data.baiduQrcodeUrl
+            })
+          }
+        }
+      }
+    })
+  },
+  toRequestEr:function(){
+    wx.request({
+      url: app.getUseData.url + 'baiduNewComers/applyBaiduNewComersQualification',
+      method: 'post',
+      data: {
+      },
+      header: app.getUseData.headerConfig,
+      success: (res) => {
+        console.log(res);
+        if (res.data.code == 1000000) {
+          if (res.data.data.status == 1) {
+            this.setData({
+              isShow1: false,
+              isShow2: false,
+              isShow3: true
+            })
+          }
         }
       }
     })

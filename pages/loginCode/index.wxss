@@ -2,11 +2,11 @@
   position: absolute;
   right: 20rpx;
   text-align: right;
-top: 30rpx;
-color: #55B5FF;
-font-size: 24rpx;
-padding: 0 10rpx;
-border: none !important;
-background: none !important;
-z-index: 10;
+  top: 15rpx;
+  color: #55b5ff;
+  font-size: 24rpx;
+  padding: 20rpx 10rpx;
+  border: none !important;
+  background: none !important;
+  z-index: 100;
 }

@@ -1,57 +1,111 @@
+const app = getApp();
 Page({
-
   /**
    * 页面的初始数据
    */
   data: {
-    currentTab: 0
+    currentTab: 0,
+    isShow1: true,
+    isShow2: false,
+    isShow3: false,
+    baiduEr: ''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function(options) {
-
+  onLoad: function (options) {
+    // baiduNewComers /
+    wx.request({
+      url: app.getUseData.url + 'baiduNewComers/queryBaiduNewComersApplyStatus',
+      method: 'post',
+      data: {
+      },
+      header: app.getUseData.headerConfig,
+      success: (res) => {
+        console.log(res);
+        if (res.data.code == 1000000) {
+          if (res.data.data.status == -1) {
+            this.setData({
+              isShow1: true,
+              isShow2: false,
+              isShow3: false
+            })
+          } else if (res.data.data.status == 1) {
+            this.setData({
+              isShow1: false,
+              isShow2: false,
+              isShow3: true
+            })
+          } else if (res.data.data.status == 2) {
+            this.setData({
+              isShow1: false,
+              isShow2: true,
+              isShow3: false,
+              haokanEr: res.data.data.haokanQrcodeUrl
+            })
+          }
+        }
+      }
+    })
   },
-  getPhoneNumber(e) {
-    console.log(e)
+  toRequestEr: function () {
+    wx.request({
+      url: app.getUseData.url + 'baiduNewComers/applyBaiduNewComersQualification',
+      method: 'post',
+      data: {
+      },
+      header: app.getUseData.headerConfig,
+      success: (res) => {
+        console.log(res);
+        if (res.data.code == 1000000) {
+          if (res.data.data.status == 1) {
+            this.setData({
+              isShow1: false,
+              isShow2: false,
+              isShow3: true
+            })
+          }
+        }
+      }
+    })
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function() {
+  onReady: function () {
     this.dialog = this.selectComponent("#dialog");
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function() {
+  onShow: function () {
 
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function() {
+  onHide: function () {
 
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function() {
+  onUnload: function () {
 
   },
   //滑动切换
-  swiperTab: function(e) {
+  swiperTab: function (e) {
     var that = this;
     that.setData({
       currentTab: e.detail.current
     });
   },
   //点击切换
-  clickTab: function(e) {
+  clickTab: function (e) {
     console.log(e)
     var that = this;
     if (this.data.currentTab === e.target.dataset.current) {
@@ -74,21 +128,21 @@ Page({
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function() {
+  onPullDownRefresh: function () {
 
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function() {
+  onReachBottom: function () {
 
   },
 
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function() {
+  onShareAppMessage: function () {
 
   }
 })

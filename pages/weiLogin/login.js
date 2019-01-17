@@ -8,7 +8,6 @@ Page({
     userInfo: {},
     isShow: true
   },
- 
   onLoad: function() {
     console.log('onLoad');
     wx.checkSession({
@@ -45,7 +44,6 @@ Page({
 
   onGotUserInfo: function(e) {
     console.log(e);
-   
     wx.login({
       success(res) {
         console.log(res)
@@ -57,16 +55,17 @@ Page({
               code: res.code
             },
             success(e) {
+              console.log('登陆成功的')
+              console.log(e);
               let d = e.data;
               if (d.code == 1000000){
                 wx.setStorageSync('ticket', d.data.ticket);
                 console.log(d.data.ticket);
                 wx.setStorageSync('loginUserInfo', d.data.data);
-                wx.navigateTo({
-                  url: '/pages/indexOne/index',
-                })
-                if(d.data.data==''||d.data.data==null){
-                  wx.navigateBack({
+                console.log(d.data.data);
+                if (d.data.data == "" || d.data.data==null){
+                  console.log('konggggggggg')
+                  wx.navigateTo({
                     url: '/pages/loginMobile/index',
                   });
                 }else{
@@ -82,10 +81,13 @@ Page({
               }
             },
             fail(e) {
+              console.log('登陆失败')
               console.log(e);
 
             },
-            complete(e) {}
+            complete(e) {
+              console.log('登陆完成，不管成功失败');
+            }
           })
         } else {
           console.log('登录失败！' + res.errMsg)

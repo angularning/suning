@@ -47,7 +47,7 @@
     </view>
     
   </view>
-  <view class='logout'>
+  <!-- <view class='logout'>
     <button>退出账户</button>
-  </view>
+  </view> -->
 </view>

@@ -6,7 +6,7 @@
         <view style='margin-top:20px;'>拉新资格</view>
       </view> -->
       <view class='erStatus2'>
-        <image src='/image/erCode.png'></image>
+        <image src='{{downloadUrl}}'></image>
         <view class='downTip'>下载应用宝app</view>
       </view>
     </view>
@@ -27,7 +27,7 @@
         <image src='http://p2a60yqmm.bkt.clouddn.com/yingyongbaoImg1.png'></image>
       </view>
       <view>
-        <video src='http://pbzxefl02.bkt.clouddn.com/baiduVideo.mp4'></video>
+        <video src='{{tencentlinkUrl}}'></video>
       </view>
       <view class='publicImgBottom'>
         <image src='http://p2a60yqmm.bkt.clouddn.com/yingyongbaoImg2.png'></image>

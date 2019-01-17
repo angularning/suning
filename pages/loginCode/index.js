@@ -45,7 +45,6 @@ Page({
       success: (res) => {
         console.log(res);
         if (res.statusCode==200){
-
         if (phone == '') {
           warn = "号码不能为空";
         } else if (phone.trim().length != 11 || !/^1[3|4|5|6|7|8|9]\d{9}$/.test(phone)) {
@@ -160,10 +159,14 @@ Page({
       },
       success: (res) => {
         console.log(res)
-        if (res.code == 1000000){
-          wx.navigateTo({
-            url: '/pages/authentication/index',
-          });
+        if (res.data.code == 1000000){
+          wx.showToast({
+            title: '' + res.data.msg,
+            icon: 'none',
+          })
+          wx.switchTab({
+            url: '/pages/indexOne/index',
+          })
         } else{
           wx.showToast({
             title: '' + res.data.msg,

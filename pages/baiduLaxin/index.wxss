@@ -8,7 +8,8 @@ page {
 
 .publicTop {
   padding: 0 2%;
-  display: flex;
+  /* display: flex; */
+  text-align: center;
   margin-top:30px;
 }
 
@@ -38,7 +39,6 @@ page {
 }
 
 .erStatus2 {
-  display: none;
   width: 200px;
   text-align: center;
 }
