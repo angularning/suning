@@ -152,6 +152,62 @@ Page({
     const ownerName = this.data.realName;
     const contact = this.data.mobile;
     const storePic = this.data.img;
+    if (provinceId == null || provinceId == '') {
+      wx.showToast({
+        title: '请选择门店地址',
+        icon: 'none'
+      })
+      return
+    }
+    if (pName == null || pName == '') {
+      wx.showToast({
+        title: '请选择门店地址',
+        icon: 'none'
+      })
+      return
+    }
+    if (cityId == null || cityId == '') {
+      wx.showToast({
+        title: '请选择门店地址',
+        icon: 'none'
+      })
+      return
+    }
+    if (cName == null || cName == '') {
+      wx.showToast({
+        title: '请选择门店地址',
+        icon: 'none'
+      })
+      return
+    }
+    if (provinceId == null || provinceId == '') {
+      wx.showToast({
+        title: '请选择门店地址',
+        icon: 'none'
+      })
+      return
+    }
+    if (provinceId == null || provinceId == '') {
+      wx.showToast({
+        title: '请选择门店地址',
+        icon: 'none'
+      })
+      return
+    }
+    if (provinceId == null || provinceId == '') {
+      wx.showToast({
+        title: '请选择门店地址',
+        icon: 'none'
+      })
+      return
+    }
+    if (provinceId == null || provinceId == '') {
+      wx.showToast({
+        title: '请选择门店地址',
+        icon: 'none'
+      })
+      return
+    }
     wx.request({
       url: app.getUseData.url +'store/createdStore',
       method: 'post',
