@@ -1,5 +1,7 @@
 {
   "pages": [
+    "pages/createShop/index",
+    "pages/city/index",
     "pages/weiLogin/login",
     "pages/yingyongbaoLaxin/index",
     "pages/haokanLaxin/index",

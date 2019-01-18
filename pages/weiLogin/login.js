@@ -64,7 +64,6 @@ Page({
                 wx.setStorageSync('loginUserInfo', d.data.data);
                 console.log(d.data.data);
                 if (d.data.data == "" || d.data.data==null){
-                  console.log('konggggggggg')
                   wx.navigateTo({
                     url: '/pages/loginMobile/index',
                   });

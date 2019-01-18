@@ -1,0 +1,46 @@
+<view style='padding:0 2%;'>
+  <view>
+    <input class='normalInput' bindinput='storeName' placeholder='请填写门店名称'></input>
+  </view>
+  <view>
+    <input class='normalInput' bindinput='phoneNumber' placeholder='请填写注册手机号'></input>
+  </view>
+  <view>
+    <input class='normalInput' bindinput='realName' placeholder='请填写真实姓名'></input>
+  </view>
+  <view class='createTitle'>请选择门店地址</view>
+  <view class='normalInput' data-id="{{provinceId}}-{{cityId}}-{{countyId}}" bindtap='open'>{{province}}-{{city}}-{{county}}</view>
+  <view>
+    <input class='normalInput' bindinput='addressDetail' placeholder='请填写详细地址'></input>
+  </view>
+  <view wx:if="{{condition}}" class="citypicker">
+    <picker-view indicator-style="height: 50px;" style="width: 100%; height: 200px;text-align:center;" value="{{value}}" bindchange="bindChange" class="citybody">
+      <view class="cityheader">
+        <view bindtap="open" class="city-cancel">取消</view>
+        <view bindtap="open" class="city-true">确定</view>
+      </view>
+      <picker-view-column>
+        <view wx:for="{{provinces}}" wx:key="item" style="line-height: 50px;padding-left:10px;text-align:center;">{{item}}</view>
+      </picker-view-column>
+      <picker-view-column>
+        <view wx:for="{{citys}}" wx:key="item" style="line-height: 50px;padding-left:10px;text-align:center;">{{item}}</view>
+      </picker-view-column>
+      <picker-view-column>
+        <view wx:for="{{countys}}" wx:key="item" style="line-height: 50px;padding-left:10px;text-align:center;">{{item}}</view>
+      </picker-view-column>
+    </picker-view>
+  </view>
+
+  <view class='createTitle'>推广人与门头合影</view>
+  <view class='seeDetail'>查看实例</view>
+  <view class='uploadImg' bindtap="chooseImage">
+    <image src='{{isShow?defSrc:img}}'></image>
+  </view>
+  <view class='createDoc'>
+    <checkbox value="1" checked="true" />同意并遵守
+    <text style='color:#3577FF;'>SN小助手用户协议</text> ，用户隐私政</view>
+  <view>
+    <button class='normalBtn1' bindtap='toAuth'>完成</button>
+  </view>
+</view>
+<view class="bgOver {{condition?'show':'hide'}}"></view>
