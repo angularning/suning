@@ -1,6 +1,8 @@
 // pages/systemMes/index.js
 const app=getApp();
 var utils = require('../../utils/util.js')
+const u = require('../../utils/util.js');
+const c = u.a(); 
 Page({
   /**
    * 页面的初始数据
@@ -18,14 +20,14 @@ Page({
  
   getMesList:function(){
     wx.request({
-      url: app.getUseData.url + 'message/list', //
+      url: c.url + 'message/list', //
       method: 'post',
       data: {
         type: 1,
         pageIndex:1,
         pageSize:100
       },
-      header: app.getUseData.headerConfig,
+      header: {        'content-type': 'application/json'        , 'Cookie': 'ticket=' + wx.getStorageSync('ticket')      },
       success: (res) => {
         console.log(res);
         if (res.data.code == 1000000) {

@@ -10,7 +10,10 @@ page{
   display: flex;
   text-align: center;
 }
-
+.fontWeigth{
+  font-weight: bold;
+  margin-left: 1px;
+}
 .kyMoney {
   width: 50%;
   height: 120rpx;

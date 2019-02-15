@@ -1,4 +1,6 @@
-const app=getApp();
+const u = require('../../utils/util.js');
+const c = u.a();
+const app = getApp();
 Page({
   /**
    * 页面的初始数据
@@ -6,59 +8,53 @@ Page({
   data: {
     currentTab: 0,
     dianyuan3List: [
-      // {
-      //   "name": "网二",
-      //   "wealth": 1000,
-      //   "shopper": 20
-      // },
-      // {
-      //   "name": "网易",
-      //   "wealth": 18800,
-      //   "shopper": 20
-      // },
-      // {
-      //   "name": "小李",
-      //   "wealth": 10000,
-      //   "shopper": 20
-      // },
-      // {
-      //   "name": "消费",
-      //   "wealth": 1000,
-      //   "shopper": 280
-      // }
     ],
+    page:0
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
+    this.getList(this.data.page,10);
+  },
+  getList(page,size){
     let that = this;
     var ticket = wx.getStorageSync('ticket');
     let storeId = wx.getStorageSync('storeId');
     wx.request({
-      url: app.getUseData.url+'/user/userList', //
+      url: c.url + 'user/userList', //
       method: 'post',
       data: {
         storeId: storeId,
-        pageIndex:0,
-        pageSize:100
+        pageIndex: page,
+        pageSize: size
       },
-      header: app.getUseData.headerConfig,
+      header: {
+        'content-type': 'application/json',
+        'Cookie': 'ticket=' + wx.getStorageSync('ticket')
+      },
       success: (res) => {
         console.log(res);
-        this.setData({
-          dianyuan3List:res.data.data.content
+        var dianyuan3List = that.data.dianyuan3List;
+        for (var i = 0; i < res.data.data.content.length; i++) {
+          dianyuan3List.push(res.data.data.content[i]);
+        }
+        // 设置数据
+        that.setData({
+          dianyuan3List: that.data.dianyuan3List
         })
+        wx.hideLoading();
+        console.log(this.data.dianyuan3List);
       }
     })
   },
-  addShopper:function(){
+  addShopper: function() {
     wx.navigateTo({
       url: '/pages/addShopper/index',
     })
   },
-  toShopperDetail:function(e){
+  toShopperDetail: function(e) {
     console.log(e)
     let userId = e.currentTarget.dataset.id;
     let name = e.currentTarget.dataset.name;
@@ -66,10 +62,10 @@ Page({
       url: '/pages/shopperDetail/index?userId=' + userId + '&name=' + name,
     })
   },
-//   / user / userList
-// storeId
-// pageIndex
-// pageSize
+  //   / user / userList
+  // storeId
+  // pageIndex
+  // pageSize
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -81,7 +77,12 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
-
+    wx.showLoading({
+      title: '加载中......'
+    })
+    if (this.data.dianyuan3List.length > 0) {
+      wx.hideLoading();
+    }
   },
 
   /**
@@ -119,10 +120,10 @@ Page({
   },
 
 
-  showDialog: function () {
+  showDialog: function() {
     this.dialog.showDialog();
   },
-  _confirmEvent: function () {
+  _confirmEvent: function() {
     this.dialog.hideDialog();
   },
   /**
@@ -136,7 +137,7 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function() {
-
+      this.getList(this.data.page++,10)
   },
 
   /**

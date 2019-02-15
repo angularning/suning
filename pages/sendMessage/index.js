@@ -1,4 +1,6 @@
 const app=getApp();
+const u = require('../../utils/util.js');
+const c = u.a(); 
 Page({
   /**
    * 页面的初始数据
@@ -36,7 +38,7 @@ Page({
       })
     }else{
       this.setData({
-        roleRegion: 'undefined'
+        roleRegion: -1
       })
     }
   },
@@ -50,7 +52,7 @@ Page({
       })
     } else {
       this.setData({
-        roleStore: 'undefined'
+        roleStore: -1
       })
     }
   },
@@ -64,7 +66,7 @@ Page({
      })
     } else {
       this.setData({
-        roleAll: 'undefined'
+        roleAll: -1
       })
     }
   },
@@ -93,7 +95,7 @@ Page({
       return
     }
 
-    if (this.data.roleAll == undefined && this.data.roleStore == undefined && this.data.roleRegion==undefined) {
+    if (this.data.roleAll == -1 && this.data.roleStore == -1 && this.data.roleRegion==-1) {
       wx.showToast({
         title: '请至少选择一个角色发送通知',
         icon: 'none'
@@ -115,7 +117,7 @@ Page({
     console.log(this.data.roleStore)
     console.log(this.data.roleRegion)
     wx.request({
-      url: app.getUseData.url + 'message/add', //
+      url: c.url + 'message/add', //
       method: 'post',
       data: {
         roleRegion: this.data.roleRegion == undefined ? -1 : this.data.roleRegion,
@@ -125,7 +127,7 @@ Page({
         type: 2,
         channel: 1
       },
-      header: app.getUseData.headerConfig,
+      header: {        'content-type': 'application/json'        , 'Cookie': 'ticket=' + wx.getStorageSync('ticket')      },
       success: (res) => {
         console.log(res);
         if (res.data.code == 1000000) {
@@ -133,6 +135,11 @@ Page({
              title: '发送成功',
              icon:'none'
            })
+           setTimeout(function(){
+              wx.switchTab({
+                url: '/pages/indexOne/index',
+              })
+           },1000)
         }else{
           wx.showToast({
             title: res.data.msg,

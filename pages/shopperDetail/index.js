@@ -1,11 +1,13 @@
 const app = getApp();
+const u = require('../../utils/util.js');
+const c = u.a(); 
 Page({
   /**
    * 页面的初始数据
    */
   data: {
     currentTab: 0,
-    title:'大区',
+    title:'',
     fuzeName:'校长',
     storeName:'',
     storeAddress:'',
@@ -38,24 +40,7 @@ Page({
       }
     ],
     balanceList: [
-    //   {
-    //   "s": 0,
-    //   "name": "百度拉新",
-    //   "money": 10000,
-    //   "url": "http://www.yqbing.com/page/mobilePage/images/standard/iconBaidulaxin.png"
-    // },
-    //   {
-    //     "s": 0,
-    //     "name": "百度拉新1",
-    //     "money": 10000,
-    //     "url": "http://www.yqbing.com/page/mobilePage/images/standard/iconBaidulaxin.png"
-    //   },
-    //   {
-    //     "s": 0,
-    //     "name": "百度拉新1",
-    //     "money": 10000,
-    //     "url": "http://www.yqbing.com/page/mobilePage/images/standard/iconBaidulaxin.png"
-    //   }
+    
     ]
   },
 
@@ -77,14 +62,14 @@ Page({
     var ticket = wx.getStorageSync('ticket');
     let storeId = wx.getStorageSync('storeId');
     wx.request({
-      url: app.getUseData.url+'user/userDetail', //
+      url: c.url+'user/userDetail', //
       method: 'post',
       data: {
         // storeId: storeId,
         // pageIndex: 0,
         // pageSize: 100
       },
-      header: app.getUseData.headerConfig,
+      header: {        'content-type': 'application/json'        , 'Cookie': 'ticket=' + wx.getStorageSync('ticket')      },
       success: (res) => {
         console.log(res);
         if (res.data.code == 1000000){
@@ -104,6 +89,43 @@ Page({
     // 查询今日
     this.checkBalance(0);
 
+  },
+  removeShopper: function () {
+    var that=this;
+    wx.showModal({
+      title: '确认移除店员？',
+      content: '移除店员后可重新添加',
+      success(e) {
+        if (e.confirm) {
+          const userId = Number(that.data.userId);
+          wx.request({
+            url: c.url + 'user/delRegionManager', //
+            method: 'post',
+            data: {
+              userId: userId
+            },
+            header: { 'content-type': 'application/json', 'Cookie': 'ticket=' + wx.getStorageSync('ticket') },
+            success: (res) => {
+              console.log(res)
+              if (res.data.code == 1000000) {
+                wx.showToast({
+                  title: res.data.msg,
+                  icon: 'none'
+                });
+                setTimeout(function () {
+                  wx.switchTab({
+                    url: '/pages/indexOne/index',
+                  })
+                }, 1000)
+              }
+            }
+          })
+        } else if (e.cancel) {
+            
+        }
+      }
+    })
+    
   },
    getTime:function(aa){
     var date1 = new Date(),
@@ -138,14 +160,14 @@ Page({
         endTime = this.getTime(0)
     }
     wx.request({
-      url: app.getUseData.url +'statistics/homeStatistics', 
+      url: c.url +'statistics/homeStatistics', 
       method: 'post',
       data: {
         userId: userId,
         startTime: startTime,
         endTime: endTime
       },
-      header: app.getUseData.headerConfig,
+      header: {        'content-type': 'application/json'        , 'Cookie': 'ticket=' + wx.getStorageSync('ticket')      },
       success: (res) => {
         console.log(res);
         if (res.data.code == 1000000) {

@@ -1,0 +1,7 @@
+<view>
+ <view class='noImg'>
+ <image src='http://p2a60yqmm.bkt.clouddn.com/noAuthImg.png'></image>
+ <view class='noImgWord'>请联系管理员添加身份信息</view>
+ </view>
+ <view class='lastBottom'>创建新门店请点这里 <text bindtap='toCreatShop' style='color:#2759FF;'>创建门店</text></view>
+</view>

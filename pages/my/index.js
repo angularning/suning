@@ -1,3 +1,5 @@
+const u = require('../../utils/util.js');
+const c = u.a(); 
 Page({
 
   /**
@@ -7,7 +9,8 @@ Page({
     userName:'',
     userPic:'',
     userRole:'',
-    userRoles:''
+    userRoles:'',
+    mobile:''
   },
 
   /**
@@ -18,8 +21,9 @@ Page({
     console.log(loginUserInfo);
     this.setData({
       userName: loginUserInfo.userName,
-      userPic: loginUserInfo.userPic,
-      userRole: loginUserInfo.userRole
+      userPic: loginUserInfo.userPic, 
+      userRole: loginUserInfo.userRole,
+      mobile: loginUserInfo.userPhone
     });
     if (this.data.userRole==2){
       this.setData({

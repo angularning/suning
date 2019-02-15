@@ -18,6 +18,15 @@
 
   </view>
   <view class='userMenu'>
+  <view class='userMenuBox'>
+      <view class='publicHasIcon'>
+        <image style='height:46rpx;' src='/image/iconSmallMobile.png'></image>
+        <text>绑定手机</text>
+      </view>
+      <view class='publicIconRight'>
+        <text style='color:#999;'>{{mobile}}</text>
+      </view>
+    </view>
     <view class='userMenuBox' bindtap='toMobile'>
       <view class='publicHasIcon'>
         <image src='/image/iconMobile.png'></image>

@@ -1,7 +1,8 @@
 //index.jsx
 //获取应用实例
 var tcity = require("../../utils/citys.js");
-
+const u = require('../../utils/util.js');
+const c = u.a(); 
 var app = getApp()
 Page({
   data: {

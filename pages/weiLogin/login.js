@@ -1,6 +1,7 @@
-//login.js
 //获取应用实例
 var app = getApp();
+const u = require('../../utils/util.js');
+const c = u.a(); 
 Page({
   data: {
     remind: '加载中',
@@ -23,9 +24,6 @@ Page({
       }
     })
     var that = this
-    // wx.setNavigationBarTitle({
-    //   title: wx.getStorageSync('mallName')
-    // });
     let userInfo = wx.getStorageSync('userInfo');
     console.log('userInfo:' + userInfo)
     if (userInfo == '' || userInfo == null) {
@@ -50,19 +48,18 @@ Page({
         if (res.code) {
           // 发起网络请求
           wx.request({
-            url: 'https://jinrongt.jihustore.com/suningApplet/user/login',
+            // url: 'https://jinrongt.jihustore.com/suningApplet/user/login',
+            url: 'https://applet.suning.jihustore.com/suningApplet/user/login',
             data: {
               code: res.code
             },
             success(e) {
-              console.log('登陆成功的')
               console.log(e);
               let d = e.data;
               if (d.code == 1000000){
                 wx.setStorageSync('ticket', d.data.ticket);
                 console.log(d.data.ticket);
                 wx.setStorageSync('loginUserInfo', d.data.data);
-                console.log(d.data.data);
                 if (d.data.data == "" || d.data.data==null){
                   wx.navigateTo({
                     url: '/pages/loginMobile/index',

@@ -1,3 +1,5 @@
+const u = require('../../utils/util.js');
+const c = u.a(); 
 const app = getApp();
 Page({
   /**
@@ -72,14 +74,14 @@ Page({
     var ticket = wx.getStorageSync('ticket');
     let storeId = wx.getStorageSync('storeId');
     wx.request({
-      url: app.getUseData.url + 'wealth/wealthDetail', //
+      url: c.url + 'wealth/wealthDetail', //
       method: 'post',
       data: {
         // storeId: storeId,
         // pageIndex: 0,
         // pageSize: 100
       },
-      header: app.getUseData.headerConfig,
+      header: {        'content-type': 'application/json'        , 'Cookie': 'ticket=' + wx.getStorageSync('ticket')      },
       success: (res) => {
         console.log(res);
         if (res.data.code == 1000000) {
@@ -132,15 +134,20 @@ Page({
       startTime = this.getTime(-30),
         endTime = this.getTime(0)
     }
+    var ticket = wx.getStorageSync('ticket');
+    console.log(ticket);
     wx.request({
-      url: app.getUseData.url + 'statistics/homeStatistics',
+      url: c.url + 'statistics/homeStatistics',
       method: 'post',
       data: {
         userId: userId,
         startTime: startTime,
         endTime: endTime
       },
-      header: app.getUseData.headerConfig,
+      header: {
+        'content-type': 'application/json' // 默认值
+        , 'Cookie': 'ticket=' + ticket
+      },
       success: (res) => {
         console.log(res);
         if (res.data.code == 1000000) {

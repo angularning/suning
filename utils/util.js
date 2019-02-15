@@ -30,6 +30,19 @@ var timeFormat = function(timestamp) {
   var seconds = time.getSeconds();
   return year + '-' + add0(month) + '-' + add0(date) + ' ' + add0(hours) + ':' + add0(minutes) + ':' + add0(seconds);
 }
+function a(){
+  var ticket = wx.getStorageSync('ticket');
+   var getUseData ={
+    //  url: 'https://jinrongt.jihustore.com/suningApplet/',
+     url: 'https://applet.suning.jihustore.com/suningApplet/',
+      headerConfig: {
+      'content-type': 'application/json' // 默认值
+        , 'Cookie': 'ticket=' + ticket
+    }
+  }
+  return getUseData
+}
 module.exports.timeFormat = timeFormat;
 module.exports.subWord = subWord;
 module.exports.sub = sub;
+module.exports.a = a;

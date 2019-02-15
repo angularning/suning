@@ -1,8 +1,12 @@
 {
   "pages": [
-    "pages/createShop/index",
-    "pages/city/index",
     "pages/weiLogin/login",
+    "pages/createShop/index",
+    "pages/balance/index",
+    "pages/submitMes/index",
+    "pages/sendMessage/index",
+    "pages/noAuth/index",
+    "pages/city/index",
     "pages/yingyongbaoLaxin/index",
     "pages/haokanLaxin/index",
     "pages/baiduLaxin/index",
@@ -10,8 +14,6 @@
     "pages/messageList/index",
     "pages/usuallyMes/index",
     "pages/systemMes/index",
-    "pages/sendMessage/index",
-    "pages/submitMes/index",
     "pages/concatus/index",
     "pages/usualQuotation/index",
     "pages/addShopper/index",
@@ -28,10 +30,8 @@
     "pages/placeDetail/index",
     "pages/yewuShopList/index",
     "pages/loginCode/index",
-    "pages/balance/index",
     "pages/bigPlace/index",
     "pages/authentication/index",
-    "pages/waitCheck/index",
     "pages/myShopCode/index",
     "pages/start/start",
     "pages/responsive/responsive",
@@ -48,7 +48,7 @@
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "仰望",
     "navigationBarTextStyle": "black",
-    "onReachBottomDistance": "10"
+    "onReachBottomDistance": 10
   },
   "tabBar": {
     "selectedColor": "#F5B32A",

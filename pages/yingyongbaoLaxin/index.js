@@ -1,4 +1,6 @@
 const app = getApp();
+const u = require('../../utils/util.js');
+const c = u.a(); 
 Page({
   /**
    * 页面的初始数据
@@ -17,11 +19,11 @@ Page({
   onLoad: function (options) {
     // baiduNewComers /
     wx.request({
-      url: app.getUseData.url + 'tencent/applyTencentBusinessQrcode',
+      url: c.url + 'tencent/applyTencentBusinessQrcode',
       method: 'post',
       data: {
       },
-      header: app.getUseData.headerConfig,
+      header: {        'content-type': 'application/json'        , 'Cookie': 'ticket=' + wx.getStorageSync('ticket')      },
       success: (res) => {
         console.log(res);
         if (res.data.code == 1000000) {
@@ -35,11 +37,11 @@ Page({
   },
   toRequestEr: function () {
     wx.request({
-      url: app.getUseData.url + 'baiduNewComers/applyBaiduNewComersQualification',
+      url: c.url + 'baiduNewComers/applyBaiduNewComersQualification',
       method: 'post',
       data: {
       },
-      header: app.getUseData.headerConfig,
+      header: {        'content-type': 'application/json'        , 'Cookie': 'ticket=' + wx.getStorageSync('ticket')      },
       success: (res) => {
         console.log(res);
         if (res.data.code == 1000000) {

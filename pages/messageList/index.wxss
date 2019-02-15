@@ -9,7 +9,7 @@
 }
 .systemMesList{
   display: inline-block;
-  width: 80%;
+  width: 75%;
   position: relative;
   top: 22px;
   left: 10px;

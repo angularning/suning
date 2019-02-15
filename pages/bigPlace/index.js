@@ -1,5 +1,7 @@
 // import "../../utils/util.js"
 const app = getApp();
+const u = require('../../utils/util.js');
+const c = u.a(); 
 Page({
   /**
    * 页面的初始数据
@@ -228,15 +230,16 @@ Page({
   },
   toRequestData(value){
     wx.request({
-      url: app.getUseData.url +'store/regionList',
+      url: c.url +'store/regionList',
       data:{},
-      header: app.getUseData.headerConfig,
+      header: {        'content-type': 'application/json'        , 'Cookie': 'ticket=' + wx.getStorageSync('ticket')      },
       success: (res) => {
         console.log(res);
         if (res.data.code == 1000000) {
           this.setData({
             placeList: res.data.data
           })
+          wx.hideLoading();
         }
       }
     })
@@ -262,7 +265,13 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    // this.watchSelectName;
+    wx.showLoading({
+      title: '加载中......'
+    })
+    console.log(this.data.placeList.length);
+    if (this.data.placeList.length>0){
+      wx.hideLoading();
+    }
   },
 
   /**

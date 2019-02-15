@@ -1,4 +1,6 @@
 const app = getApp();
+const u = require('../../utils/util.js');
+const c = u.a(); 
 Page({
   /**
    * 页面的初始数据
@@ -29,12 +31,12 @@ Page({
       color: '#ccc',
     })
     wx.request({
-      url: app.getUseData.url + 'common/smsSend',
+      url: c.url + 'common/smsSend',
       method: 'post',
       data: {
         mobile: phone
       },
-      header: app.getUseData.headerConfig,
+      header: {        'content-type': 'application/json'        , 'Cookie': 'ticket=' + wx.getStorageSync('ticket')      },
       success: (res) => {
         console.log(res);
         if (res.statusCode == 200) {
@@ -120,18 +122,15 @@ Page({
       });
       return
     }
-
-    var ticket = wx.getStorageSync('ticket')
-    console.log(ticket)
+    // var ticket = wx.getStorageSync('ticket')
     wx.request({
-      url: app.getUseData.url+'user/register',
+      url: c.url+'user/register',
       method: 'post',
       data: {
         mobile: phone,
-        smsCode: smsCode,
-        ticket: ticket
+        smsCode: smsCode
       },
-      header: app.getUseData.headerConfig,
+      header: {        'content-type': 'application/json'        , 'Cookie': 'ticket=' + wx.getStorageSync('ticket')      },
       success: (res) => {
         console.log(res)
         if (res.data.code == 1000000) {
@@ -139,11 +138,17 @@ Page({
             title: '' + res.data.msg,
             icon: 'none',
           })
-          setTimeout(function(){
-            wx.switchTab({
-              url: '/pages/indexOne/index',
-            })
-          },1000)
+         setTimeout(function(){
+           if (res.data.userRole == 1 || res.data.userRole == '' || res.data.userRole == null) {
+             wx.navigateTo({
+               url: '/pages/noAuth/index',
+             })
+           } else {
+             wx.switchTab({
+               url: '/pages/indexOne/index',
+             })
+           }
+         },1000)
         } else {
           wx.showToast({
             title: '' + res.data.msg,

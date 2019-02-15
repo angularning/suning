@@ -194,12 +194,14 @@ page{
   width: 160rpx;
   height: 160rpx;
   vertical-align: middle;
+  border-radius: 10px;
 }
 .userSetName{
   float: left;
   margin-left: 12rpx;
   color: #fff;
-  margin-top: 40rpx;
+  margin-top:20rpx;
+  width:40%;
 }
 .publicRight{
   float: right;

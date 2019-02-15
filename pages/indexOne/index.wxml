@@ -2,7 +2,7 @@
   <view class='moneyTotal'>
     <block wx:if="{{role==5}}">
       <view class='kyMoney' bindtap='toBigPlace'>
-        <view class='moneyWord'>启动大区</view>
+        <view class='moneyWord'>启动大区 <text class='fontWeigth'>></text></view>
         <view class='moneyNum'>{{regionNumber}}</view>
       </view>
       <view class='monthMoney'>
@@ -12,23 +12,23 @@
     </block>
 
     <block wx:elif="{{role==4}}">
-      <view class='kyMoney' bindtap='toBigPlace'>
+      <view class='kyMoney'>
         <view class='moneyWord'>负责人</view>
         <view class='moneyNum'>{{regionManager4}}</view>
       </view>
-      <view class='monthMoney'>
-        <view class='moneyWord'>业务门店</view>
+      <view class='monthMoney' bindtap='toSeeMore4Shop'>
+        <view class='moneyWord'>业务门店 <text class='fontWeigth'>></text></view>
         <view class='moneyNum'>{{storeNumber4}}</view>
       </view>
     </block>
 
     <block wx:elif="{{role==3}}">
-      <view class='kyMoney' bindtap='toBigPlace'>
+      <view class='kyMoney'>
         <view class='moneyWord'>督导</view>
         <view class='moneyNum'>{{storeManager}}</view>
       </view>
-      <view class='monthMoney'>
-        <view class='moneyWord'>店员</view>
+      <view class='monthMoney' bindtap='toSeeMoreShopper'>
+        <view class='moneyWord'>店员 <text class='fontWeigth'>></text></view>
         <view class='moneyNum'>{{clerkNumber}}</view>
       </view>
     </block>

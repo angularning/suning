@@ -154,3 +154,46 @@
   font-weight: 400;
   color: rgba(25, 59, 103, 1);
 }
+
+ 
+.list-msg {
+    background-color: #fff;
+    position: relative;
+}
+ 
+.list-msg1 {
+    height: 60rpx;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+ 
+
+ 
+.select_box {
+    background-color: #fff;
+    padding: 0 2%;
+    width: 96%;
+    position: absolute;
+    top: 82rpx;
+    z-index: 20;
+    overflow: hidden;
+    animation: myfirst 0.1s;
+    border: 1px #eee solid;
+}
+ 
+@keyframes myfirst {
+    from {
+        height: 0rpx;
+    }
+ 
+    to {
+        height: 210rpx;
+    }
+}
+ 
+.select_one {
+    height: 70rpx;
+    line-height: 70rpx;
+    border-bottom: 1px solid #eee;
+}

@@ -1,3 +1,6 @@
+const u = require('../../utils/util.js');
+const utils = require('../../utils/util.js');
+const c=u.a(); 
 const app=getApp();
 Page({
   /**
@@ -12,10 +15,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-
+    
   },
   mesInput:function(e){
-    console.log(e.detail.value);
     this.setData({
       currentInput: e.detail.value
     })
@@ -30,20 +32,25 @@ Page({
       return
     }
     wx.request({
-      url: app.getUseData.url + 'userFeedBack/add', //
+      url: c.url + 'userFeedBack/add', //
       method: 'post',
       data: {
         // role: this.data.role,
         content: currentInput
       },
-      header: app.getUseData.headerConfig,
+      header: {        'content-type': 'application/json'        , 'Cookie': 'ticket=' + wx.getStorageSync('ticket')      },
       success: (res) => {
         console.log(res);
         if (res.data.code == 1000000) {
           wx.showToast({
-            title: '发送成功',
+            title: '提交成功',
             icon: 'none'
-          })
+          });
+         setTimeout(function(){
+           wx.switchTab({
+             url: '/pages/my/index',
+           })
+         },1000)
         } else {
           wx.showToast({
             title: res.data.msg,

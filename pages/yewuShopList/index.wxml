@@ -1,6 +1,6 @@
 <view style='backgrond:#f4f4f4;'>
  <view class='balanceListBoxList'>
-    <view class='balanceListBox' wx:for="{{shopList}}" id="{{item.storeId}}" bindtap='toShopDetail'>
+    <view class='balanceListBox' wx:for="{{shopList}}" data-name="{{item.storeName}}" id="{{item.storeId}}" bindtap='toShopDetail'>
       <view class='afterClear'>
         <view class='balanceListBoxName'>{{item.storeName}}</view>
         <view class='balanceListBoxCaiFu'>{{item.yesterdayWealth}}</view>

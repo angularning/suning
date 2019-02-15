@@ -1,7 +1,7 @@
 <view style='backgrond-color:#fff;'>
  <view class='publicWrap'>
   <view class='publicLoginWord'>输入对方手机号，添加店员</view>
-  <input class='publicLoginInput' placeholder='输入手机号' placeholder-style='color:#999;'></input>
+  <input class='publicLoginInput' bindinput='phoneNumber' placeholder='输入手机号' placeholder-style='color:#999;'></input>
   <view>
     <button bindtap='enterAdd' class='normalBtn'>确认添加</button>
   </view>

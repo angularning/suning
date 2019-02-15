@@ -1,3 +1,5 @@
+const u = require('../../utils/util.js');
+const c = u.a(); 
 var utils = require('../../utils/util.js')
 const app = getApp();
 Page({
@@ -59,11 +61,10 @@ Page({
    */
   onLoad: function(options) {
     let that = this;
+    console.log({        'content-type': 'application/json'        , 'Cookie': 'ticket=' + wx.getStorageSync('ticket')      });
     var ticket = wx.getStorageSync('ticket');
-    const a = 15811239162;
-    console.log(a.toLocaleString())
     wx.request({
-      url: app.getUseData.url + 'home',
+      url: c.url + 'home',
       method: 'post',
       data: {},
       header: {

@@ -38,7 +38,7 @@
         <text>业务量统计</text>
       </view>
       <view class='publicRight'>
-        <text>单位：财富</text>
+        <text>单位：笔</text>
       </view>
     </view>
     <view class='tableChange'>
@@ -48,12 +48,12 @@
         <view class="swiper-tab-item {{currentTab==2?'onActive':''}}" data-current="2" bindtap="clickTab">近7日</view>
         <view class="swiper-tab-item {{currentTab==3?'onActive':''}}" data-current="3" bindtap="clickTab">近30日</view>
       </view>
-      <swiper style='height:440rpx;' current="{{currentTab}}" duration="300" bindchange="swiperTab">
+      <swiper style='height:560rpx;' current="{{currentTab}}" duration="300" bindchange="swiperTab">
          <swiper-item>
           <view>
             <view class='totalShowNum afterClear'>
-              <view class='totalShowNum-left'>预估收益(财富)</view>
-              <view class='totalShowNum-right'>{{estimatedRevenue0}}</view>
+              <view class='totalShowNum-left'>预估收益：{{estimatedRevenue0}}财富</view>
+              <view class='totalShowNum-right'></view>
             </view>
             <view wx:for='{{balanceList0}}' class='balanceList afterClear'>
               <view class='listSmallImg'>
@@ -67,8 +67,8 @@
         <swiper-item>
           <view>
             <view class='totalShowNum afterClear'>
-              <view class='totalShowNum-left'>预估收益(财富)</view>
-              <view class='totalShowNum-right'>{{estimatedRevenue1}}</view>
+              <view class='totalShowNum-left'>预估收益：{{estimatedRevenue1}}财富</view>
+              <view class='totalShowNum-right'></view>
             </view>
             <view wx:for='{{balanceList1}}' class='balanceList afterClear'>
                <view class='listSmallImg'>
@@ -82,8 +82,8 @@
         <swiper-item>
           <view>
             <view class='totalShowNum afterClear'>
-              <view class='totalShowNum-left'>预估收益(财富)</view>
-              <view class='totalShowNum-right'>{{estimatedRevenue2}}</view>
+              <view class='totalShowNum-left'>预估收益：{{estimatedRevenue2}}财富</view>
+              <view class='totalShowNum-right'></view>
             </view>
             <view wx:for='{{balanceList2}}' class='balanceList afterClear'>
               <view class='listSmallImg'>
@@ -97,8 +97,8 @@
         <swiper-item>
         <view>
             <view class='totalShowNum afterClear'>
-              <view class='totalShowNum-left'>预估收益(财富)</view>
-              <view class='totalShowNum-right'>{{estimatedRevenue3}}</view>
+              <view class='totalShowNum-left'>预估收益：{{estimatedRevenue3}}财富</view>
+              <view class='totalShowNum-right'></view>
             </view>
             <view wx:for='{{balanceList3}}' class='balanceList afterClear'>
                <view class='listSmallImg'>

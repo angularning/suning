@@ -1,3 +1,5 @@
+const u = require('../../utils/util.js');
+const c = u.a(); 
 Page({
 
   /**
@@ -10,72 +12,27 @@ Page({
     showListFalse:false,
     up: '/image/historyIconUp.png',
     down:'/image/historyIconDown.png',
-    placeBalace:[
-      // {
-      //   id:1000,
-      //   year:2018,
-      //   month:12,
-      //   wealth:10000,
-      //   shopper:199,
-      //   yeWuList: [
-      //     {
-      //       name: "百度拉新",
-      //       wealth: 10000
-      //     },
-      //     {
-      //       name: "百度拉新1",
-      //       wealth: 10000
-      //     },
-      //     {
-      //       name: "百度拉新1",
-      //       wealth: 10000
-      //     }
-      //   ]
-      // },
-      // {
-      //   id: 11,
-      //   year: 2018,
-      //   month: 11,
-      //   wealth: 9999,
-      //   shopper: 100,
-      //   yeWuList: [
-      //     {
-      //       name: "百度拉新11",
-      //       wealth: 10000
-      //     },
-      //     {
-      //       name: "百度拉新111",
-      //       wealth: 10000
-      //     },
-      //     {
-      //       name: "百度拉新1",
-      //       wealth: 10000
-      //     }
-        // ]
-      // }
-    ]
-    
+    placeBalace:[],
+    noData:false
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
+    var that=this;
     console.log(options)
     var ticket = wx.getStorageSync('ticket');
     let storeId = wx.getStorageSync('storeId');
     let userId = Number(options.userId);
     wx.request({
-      url: 'https://jinrongt.jihustore.com/suningApplet/statistics/statisticsDetail',
+      url: c.url+'statistics/statisticsDetail',
       method: 'post',
       data: {
         storeId: storeId,
         userId: userId,
       },
-      header: {
-        'content-type': 'application/json' // 默认值
-        , 'Cookie': 'ticket=' + ticket
-      },
+      header: {        'content-type': 'application/json'        , 'Cookie': 'ticket=' + wx.getStorageSync('ticket')      },
       success: (res) => {
         console.log(res);
         var placeBalace=[];
@@ -89,8 +46,13 @@ Page({
               placeBalace.push(e);
             }
           })
+          console.log(placeBalace)
+          if (placeBalace.length<1){
+            that.setData({
+              noData: true
+            })
+          }
         }
-
         this.setData({
           placeBalace: placeBalace
         })
@@ -98,14 +60,6 @@ Page({
       }
     })
   },
-  // changeShow:function(e){
-  //   console.log(e);
-  //   if (e.currentTarget.dataset.type=='up'){
-        
-  //   } else if (e.currentTarget.dataset.type == 'down'){
-
-  //   }
-  // },
   changeShow: function (event) {
     var that = this;
     var toggleBtnVal = that.data.uhide;

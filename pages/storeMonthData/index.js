@@ -1,4 +1,6 @@
 const app=getApp();
+const u = require('../../utils/util.js');
+const c = u.a(); 
 Page({
   /**
    * 页面的初始数据
@@ -65,13 +67,13 @@ Page({
     let storeId = options.storeId;
     let userId = Number(options.userId);
     wx.request({
-      url: app.getUseData.url+'statistics/statisticsDetail',
+      url: c.url+'statistics/statisticsDetail',
       method: 'post',
       data: {
         storeId: storeId,
         userId: userId,
       },
-      header: app.getUseData.headerConfig,
+      header: {        'content-type': 'application/json'        , 'Cookie': 'ticket=' + wx.getStorageSync('ticket')      },
       success: (res) => {
         console.log(res);
         var placeBalace=[];

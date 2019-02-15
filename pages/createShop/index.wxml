@@ -1,4 +1,4 @@
-<view style='padding:0 2%;'>
+<view style='padding:2% 2%;'>
   <view>
     <input class='normalInput' bindinput='storeName' placeholder='请填写门店名称'></input>
   </view>
@@ -10,9 +10,17 @@
   </view>
   <view class='createTitle'>请选择门店地址</view>
   <view class='normalInput' data-id="{{provinceId}}-{{cityId}}-{{countyId}}" bindtap='open'>{{province}}-{{city}}-{{county}}</view>
-  <view>
-    <input class='normalInput' bindinput='addressDetail' placeholder='请填写详细地址'></input>
+  <view class='list-msg '>
+    <view class='normalInput' bindtap='bindShowMsg'>
+      <text>{{defultWord}}</text>
+    </view>
+    <scroll-view scroll-y bindscroll="scroll" wx:if="{{select}}" class='select_box' style='height:200rpx;'>
+      <view  class="select_one" wx:for="{{placeList}}">
+        <view class="" bindtap="mySelect" data-id="{{item.id}}" data-name="{{item.agentName}}">{{item.agentName}}</view>
+      </view>
+    </scroll-view>
   </view>
+  <input class='normalInput' bindinput='addressDetail' placeholder='请填写详细地址'></input>
   <view wx:if="{{condition}}" class="citypicker">
     <picker-view indicator-style="height: 50px;" style="width: 100%; height: 200px;text-align:center;" value="{{value}}" bindchange="bindChange" class="citybody">
       <view class="cityheader">
@@ -37,10 +45,16 @@
     <image src='{{isShow?defSrc:img}}'></image>
   </view>
   <view class='createDoc'>
-    <checkbox value="1" checked="true" />同意并遵守
+  <checkbox-group style="display:inline-block;"  bindchange="agree">
+     <checkbox value="1"  checked="true" />
+  </checkbox-group>
+   同意并遵守
     <text style='color:#3577FF;'>SN小助手用户协议</text> ，用户隐私政</view>
   <view>
     <button class='normalBtn1' bindtap='toAuth'>完成</button>
   </view>
+</view>
+<view class='exampleImg'>
+<image src=''></image>
 </view>
 <view class="bgOver {{condition?'show':'hide'}}"></view>

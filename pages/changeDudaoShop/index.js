@@ -1,3 +1,6 @@
+const u = require('../../utils/util.js');
+const c = u.a(); 
+const app=getApp();
 Page({
 
   /**

@@ -1,3 +1,5 @@
+const u = require('../../utils/util.js');
+const c = u.a(); 
 Page({
 
   /**

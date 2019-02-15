@@ -1,11 +1,13 @@
 const app = getApp();
+const u = require('../../utils/util.js');
+const c = u.a(); 
 Page({
   /**
    * 页面的初始数据
    */
   data: {
     currentTab: 0,
-    title:'大区',
+    title:'业务门店',
     fuzeName:'校长',
     shopNum:78,
     placeBalace: [
@@ -45,18 +47,20 @@ Page({
     this.getShopList(options.id);
   },
   toShopDetail:function(e){
+    console.log(e)
     var id = e.currentTarget.id;
+    var name = e.currentTarget.dataset.name;
     wx.navigateTo({
-      url: '/pages/shopDetail/index?storeId='+id,
+      url: '/pages/shopDetail/index?storeId='+id+'&name='+name,
     })
   },
   getShopList(value) {
     wx.request({
-      url: app.getUseData.url + 'store/storeInfoList',
+      url: c.url + 'store/storeInfoList',
       data: {
         regionId: value
       },
-      header: app.getUseData.headerConfig,
+      header: {        'content-type': 'application/json'        , 'Cookie': 'ticket=' + wx.getStorageSync('ticket')      },
       success: (res) => {
         console.log(res);
         if (res.data.code == 1000000) {
@@ -78,7 +82,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
-
+    
   },
 
   /**

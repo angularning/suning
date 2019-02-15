@@ -1,4 +1,4 @@
-<view style='margin-top:20rpx;'>
+<view style='margin-top:20rpx;margin-bottom:50px;'>
  <view class='balanceListBox' bindtap='toShopperDetail' wx:for="{{dianyuan3List}}" data-id="{{item.userId}}" data-name="{{item.userName}}">
       <view class='afterClear'>
         <view class='balanceListBoxName'>{{item.userName}}</view>

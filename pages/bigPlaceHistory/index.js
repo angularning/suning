@@ -1,4 +1,6 @@
 const app=getApp();
+const u = require('../../utils/util.js');
+const c = u.a(); 
 Page({
   /**
    * 页面的初始数据
@@ -11,48 +13,7 @@ Page({
     up: '/image/historyIconUp.png',
     down:'/image/historyIconDown.png',
     placeBalace:[
-      // {
-      //   id:1000,
-      //   year:2018,
-      //   month:12,
-      //   wealth:10000,
-      //   shopper:199,
-      //   yeWuList: [
-      //     {
-      //       name: "百度拉新",
-      //       wealth: 10000
-      //     },
-      //     {
-      //       name: "百度拉新1",
-      //       wealth: 10000
-      //     },
-      //     {
-      //       name: "百度拉新1",
-      //       wealth: 10000
-      //     }
-      //   ]
-      // },
-      // {
-      //   id: 11,
-      //   year: 2018,
-      //   month: 11,
-      //   wealth: 9999,
-      //   shopper: 100,
-      //   yeWuList: [
-      //     {
-      //       name: "百度拉新11",
-      //       wealth: 10000
-      //     },
-      //     {
-      //       name: "百度拉新111",
-      //       wealth: 10000
-      //     },
-      //     {
-      //       name: "百度拉新1",
-      //       wealth: 10000
-      //     }
-        // ]
-      // }
+     
     ]
     
   },
@@ -67,12 +28,12 @@ Page({
     var loginUserInfo = wx.getStorageSync('loginUserInfo');
     let userId = loginUserInfo.userId ;
     wx.request({
-      url: app.getUseData.url+'statistics/statisticsDetail',
+      url: c.url+'statistics/statisticsDetail',
       method: 'post',
       data: {
         userId: userId,
       },
-      header: app.getUseData.headerConfig,
+      header: {        'content-type': 'application/json'        , 'Cookie': 'ticket=' + wx.getStorageSync('ticket')      },
       success: (res) => {
         console.log(res);
         var placeBalace=[];
@@ -91,18 +52,11 @@ Page({
         this.setData({
           placeBalace: placeBalace
         })
+        wx.hideLoading();
        
       }
     })
   },
-  // changeShow:function(e){
-  //   console.log(e);
-  //   if (e.currentTarget.dataset.type=='up'){
-        
-  //   } else if (e.currentTarget.dataset.type == 'down'){
-
-  //   }
-  // },
   changeShow: function (event) {
     var that = this;
     var toggleBtnVal = that.data.uhide;
@@ -129,7 +83,9 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
-
+    wx.showLoading({
+      title: '加载中.....',
+    })
   },
 
   /**

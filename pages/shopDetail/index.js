@@ -1,11 +1,13 @@
 const app = getApp();
+const u = require('../../utils/util.js');
+const c = u.a(); 
 Page({
   /**
    * 页面的初始数据
    */
   data: {
     currentTab: 0,
-    title:'大区',
+    title:'',
     fuzeName:'校长',
     storeName:'',
     storeAddress:'',
@@ -68,7 +70,7 @@ Page({
     this.data.userId = loginUserInfo.userId;
     if (options==''||options==null){
       wx.setNavigationBarTitle({
-        title: '员工'
+        title: '店铺'
       })
     }else{
       wx.setNavigationBarTitle({
@@ -81,14 +83,14 @@ Page({
       storeId: Number(options.storeId)
     })
     wx.request({
-      url: app.getUseData.url +'store/storeInfoDetail', //
+      url: c.url +'store/storeInfoDetail', //
       method: 'post',
       data: {
         storeId: storeId
         // pageIndex: 0,
         // pageSize: 100
       },
-      header: app.getUseData.headerConfig,
+      header: {        'content-type': 'application/json'        , 'Cookie': 'ticket=' + wx.getStorageSync('ticket')      },
       success: (res) => {
         console.log(res);
         if (res.data.code == 1000000){
@@ -113,6 +115,7 @@ Page({
     this.checkBalance(0);
 
   },
+  
    getTime:function(aa){
     var date1 = new Date(),
     time1=date1.getFullYear() + "-" + (date1.getMonth() + 1) + "-" + date1.getDate();//time1表示当前时间
@@ -145,15 +148,16 @@ Page({
         startTime = this.getTime(-30),
         endTime = this.getTime(0)
     }
+    let storeId = Number(this.data.storeId);
     wx.request({
-      url: app.getUseData.url +'statistics/homeStatistics', 
+      url: c.url +'statistics/homeStatistics', 
       method: 'post',
       data: {
-        userId: userId,
+        storeId: storeId ,
         startTime: startTime,
         endTime: endTime
       },
-      header: app.getUseData.headerConfig,
+      header: {        'content-type': 'application/json'        , 'Cookie': 'ticket=' + wx.getStorageSync('ticket')      },
       success: (res) => {
         console.log(res);
         if (res.data.code == 1000000) {

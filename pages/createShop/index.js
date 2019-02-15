@@ -1,27 +1,32 @@
 //获取应用实例
 var tcity = require("../../utils/citys.js");
 var app = getApp()
+const u = require('../../utils/util.js');
+const c = u.a();
 Page({
   data: {
+    check: 1,
+    fileUpload: '',
+    defultWord: '请选择大区',
     provinces: [],
     province: "",
-    provinceId:'',
+    provinceId: '',
     citys: [],
     city: "",
-    cityId:'',
+    cityId: '',
     countys: [],
     county: '',
-    countyId:'',
+    countyId: '',
     value: [0, 0, 0],
     values: [0, 0, 0],
-    isShow:true,
+    isShow: true,
     condition: false,
-    defSrc:'http://p2a60yqmm.bkt.clouddn.com/uploadImg.png',
-    img:'',
+    defSrc: 'http://p2a60yqmm.bkt.clouddn.com/uploadImg.png',
+    img: '',
     storeName: '',
     mobile: '',
-    realName:'',
-    addressDetail:''
+    realName: '',
+    addressDetail: ''
   },
   phoneNumber(e) {
     this.setData({
@@ -43,7 +48,7 @@ Page({
       addressDetail: e.detail.value
     })
   },
-  bindChange: function (e) {
+  bindChange: function(e) {
     //console.log(e);
     var val = e.detail.value
     var t = this.data.values;
@@ -99,12 +104,28 @@ Page({
 
 
   },
-  open: function () {
+  open: function() {
     this.setData({
       condition: !this.data.condition
     })
   },
-  onLoad: function () {
+  onLoad: function() {
+    wx.request({
+      url: c.url + 'store/selectRegionList',
+      method: 'post',
+      data: {},
+      header: {
+        'content-type': 'application/json',
+        'Cookie': 'ticket=' + wx.getStorageSync('ticket')
+      },
+      success: (res) => {
+        console.log(res.data.data);
+        this.setData({
+          placeList: res.data.data
+        })
+      }
+    })
+
     console.log("onLoad");
     var that = this;
     tcity.init(that);
@@ -116,11 +137,9 @@ Page({
     for (let i = 0; i < cityData.length; i++) {
       provinces.push(cityData[i].name);
     }
-    console.log('省份完成');
     for (let i = 0; i < cityData[0].child.length; i++) {
       citys.push(cityData[0].child[i].name)
     }
-    console.log('city完成');
     for (let i = 0; i < cityData[0].child[0].child.length; i++) {
       countys.push(cityData[0].child[0].child[i].name)
     }
@@ -137,7 +156,32 @@ Page({
     })
     console.log('初始化完成');
   },
-  toAuth:function(){
+  agree: function(e) {
+    console.log(e);
+    if (e.detail.value == 0) {
+      this.setData({
+        check: 0
+      })
+    } else {
+      this.setData({
+        check: 1
+      })
+    }
+  },
+  bindShowMsg() {
+    this.setData({
+      select: !this.data.select
+    })
+  },
+  mySelect(e) {
+    console.log(e)
+    this.setData({
+      defultWord: e.currentTarget.dataset.name,
+      placeId: e.currentTarget.dataset.id,
+      select: false
+    })
+  },
+  toAuth: function() {
     const provinceId = this.data.provinceId;
     const pName = this.data.province;
 
@@ -151,7 +195,46 @@ Page({
     const storeName = this.data.storeName;
     const ownerName = this.data.realName;
     const contact = this.data.mobile;
-    const storePic = this.data.img;
+    const fileUpload = this.data.fileUpload;
+    const placeId = this.data.placeId;
+    const check = this.data.check;
+    if (storeName == null || storeName == '') {
+      wx.showToast({
+        title: '请填写门店名称',
+        icon: 'none'
+      })
+      return
+    }
+    if (placeId == null || placeId == '') {
+      wx.showToast({
+        title: '请选择大区',
+        icon: 'none'
+      })
+      return
+    }
+    if (contact == null || contact == '') {
+      wx.showToast({
+        title: '请填写注册手机号',
+        icon: 'none'
+      })
+      return
+    }
+    if (contact.trim().length != 11 || !/^1[3|4|5|6|7|8|9]\d{9}$/.test(contact)) {
+      wx.showToast({
+        title: '手机号格式不正确',
+        icon: 'none',
+        duration: 2000
+      });
+      return
+    }
+    if (ownerName == null || ownerName == '') {
+      wx.showToast({
+        title: '请填写真实姓名',
+        icon: 'none'
+      })
+      return
+    }
+
     if (provinceId == null || provinceId == '') {
       wx.showToast({
         title: '请选择门店地址',
@@ -180,38 +263,45 @@ Page({
       })
       return
     }
-    if (provinceId == null || provinceId == '') {
+    if (areaId == null || areaId == '') {
       wx.showToast({
         title: '请选择门店地址',
         icon: 'none'
       })
       return
     }
-    if (provinceId == null || provinceId == '') {
+    if (aName == null || aName == '') {
       wx.showToast({
         title: '请选择门店地址',
         icon: 'none'
       })
       return
     }
-    if (provinceId == null || provinceId == '') {
+    if (address == null || address == '') {
       wx.showToast({
-        title: '请选择门店地址',
+        title: '请填写详细地址',
         icon: 'none'
       })
       return
     }
-    if (provinceId == null || provinceId == '') {
+    if (fileUpload == null || fileUpload == '') {
       wx.showToast({
-        title: '请选择门店地址',
+        title: '请上传照片',
+        icon: 'none'
+      })
+      return
+    }
+    if (check == 0) {
+      wx.showToast({
+        title: '请勾选同意协议',
         icon: 'none'
       })
       return
     }
     wx.request({
-      url: app.getUseData.url +'store/createdStore',
+      url: c.url + 'store/createdStore',
       method: 'post',
-      data:{
+      data: {
         provinceId: provinceId,
         pName: pName,
         cityId: cityId,
@@ -222,44 +312,81 @@ Page({
         storeName: storeName,
         ownerName: ownerName,
         contact: contact,
-        storePic: storePic
+        storePic: fileUpload,
+        placeId: placeId
       },
-      header:app.getUseData.headerConfig,
-      success:(res)=>{
-          console.log(res);
+      header: {
+        'content-type': 'application/json',
+        'Cookie': 'ticket=' + wx.getStorageSync('ticket')
+      },
+      success: (res) => {
+        console.log(res);
+        if (res.data.code == 1000000) {
+          wx.showToast({
+            title: res.data.msg,
+            icon: 'none'
+          });
+          setTimeout(function () {
+            wx.switchTab({
+              url: '/pages/indexOne/index',
+            })
+          }, 1000);
+          wx.setStorageSync('loginUserInfo', res.data.data.data);
+
+        } else {
+          wx.showToast({
+            title: res.data.msg,
+            icon: 'none'
+          })
+        }
       }
     })
   },
   chooseImage(e) {
+    var that = this;
     wx.chooseImage({
-      sizeType: ['original', 'compressed'],  //可选择原图或压缩后的图片
+      sizeType: ['original', 'compressed'], //可选择原图或压缩后的图片
       sourceType: ['album', 'camera'], //可选择性开放访问相册、相机
       success: res => {
         this.setData({
-          isShow:false,
+          isShow: false,
           img: res.tempFilePaths[0]
         })
         const tempFilePaths = res.tempFilePaths
+        var ticket = wx.getStorageSync('ticket');
         wx.uploadFile({
-          url: 'https://example.weixin.qq.com/upload', // 仅为示例，非真实的接口地址
+          url: c.url + 'common/upload',
           filePath: tempFilePaths[0],
+          header: {
+            'content-type': 'multipart/form-data' // 默认值
+              ,
+            'Cookie': 'ticket=' + ticket
+          },
           name: 'file',
-          data: {
-            user: 'test'
+          formData: {
+            // user: 1
           },
           success(res) {
-            const data = res.data
-            // do something
+            console.log(res);
+            var c = res.data;
+            c = c.replace(/\ufeff/g, "");
+            var nd = JSON.parse(c);
+            console.log(nd);
+            if (nd.code == 1000000) {
+              that.setData({
+                fileUpload: nd.data
+              })
+            }
           },
-          fail(e){
+          fail(e) {
             console.log(e);
-          }
-          ,complete(e){
+          },
+          complete(e) {
             console.log(e);
           }
         })
 
-      
+
       }
     })
   }

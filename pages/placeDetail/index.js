@@ -1,4 +1,6 @@
 const app = getApp();
+const u = require('../../utils/util.js');
+const c = u.a(); 
 Page({
   /**
    * 页面的初始数据
@@ -63,11 +65,12 @@ Page({
   },
   toRequestData(regionId) {
     wx.request({
-      url: app.getUseData.url + 'store/regionDetail',
+      method:'post',
+      url: c.url + 'store/regionDetail?regionId=' + regionId,
       data: {
-        regionId: regionId
+        // regionId: regionId
       },
-      header: app.getUseData.headerConfig,
+      header: {        'content-type': 'application/json'        , 'Cookie': 'ticket=' + wx.getStorageSync('ticket')      },
       success: (res) => {
         console.log(res);
         if (res.data.code == 1000000) {
@@ -118,14 +121,14 @@ Page({
         endTime = this.getTime(0)
     }
     wx.request({
-      url: app.getUseData.url + 'statistics/homeStatistics',
+      url: c.url + 'statistics/homeStatistics',
       method: 'post',
       data: {
         userId: userId,
         startTime: startTime,
         endTime: endTime
       },
-      header: app.getUseData.headerConfig,
+      header: {        'content-type': 'application/json'        , 'Cookie': 'ticket=' + wx.getStorageSync('ticket')      },
       success: (res) => {
         console.log(res);
         if (res.data.code == 1000000) {

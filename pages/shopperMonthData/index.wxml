@@ -1,7 +1,7 @@
 <view>
   <view>
     <view class='balanceListBoxList'>
-      <view class='balanceListBox' wx:for="{{ placeBalace}}"  >
+      <view class='balanceListBox' wx:for="{{placeBalace}}"  >
         <view class='afterClear balanceListBoxPadding'>
           <view class='historyListLeft'>
             <view class='afterClear'>
@@ -27,7 +27,9 @@
           </view>
         </view>
       </view>
-
     </view>
+  </view>
+  <view wx:if="{{noData}}">
+       <view style='text-align:center;'> <image style="width:130px;height:160px;" src='http://p2a60yqmm.bkt.clouddn.com/noDataImg1.png'></image></view>
   </view>
 </view>

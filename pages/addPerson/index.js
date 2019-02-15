@@ -1,4 +1,6 @@
 const app=getApp();
+const u = require('../../utils/util.js');
+const c = u.a(); 
 Page({
   /**
    * 页面的初始数据
@@ -40,13 +42,16 @@ Page({
       return
     }
     wx.request({
-      url: app.getUseData.url + 'user/addRegionManager',
+      url: c.url + 'user/addRegionManager',
       method: 'post',
       data: {
         regionId: Number(this.data.regionId),
         mobile: Number(this.data.mobile)
       },
-      header: app.getUseData.headerConfig,
+      header:  {
+        'content-type': 'application/json'
+        , 'Cookie': 'ticket=' + wx.getStorageSync('ticket')
+      },
       success: (res) => {
         console.log(res);
         if (res.data.code == 1000000) {

@@ -1,3 +1,5 @@
+const u = require('../../utils/util.js');
+const c = u.a(); 
 const app=getApp();
 Page({
   /**
@@ -17,11 +19,11 @@ Page({
   onLoad: function(options) {
     // baiduNewComers /
     wx.request({
-      url: app.getUseData.url + 'baiduNewComers/queryBaiduNewComersApplyStatus',
+      url: c.url + 'baiduNewComers/queryBaiduNewComersApplyStatus',
       method: 'post',
       data: {
       },
-      header: app.getUseData.headerConfig,
+      header: {        'content-type': 'application/json'        , 'Cookie': 'ticket=' + wx.getStorageSync('ticket')      },
       success: (res) => {
         console.log(res);
         if (res.data.code == 1000000) {
@@ -51,11 +53,11 @@ Page({
   },
   toRequestEr:function(){
     wx.request({
-      url: app.getUseData.url + 'baiduNewComers/applyBaiduNewComersQualification',
+      url: c.url + 'baiduNewComers/applyBaiduNewComersQualification',
       method: 'post',
       data: {
       },
-      header: app.getUseData.headerConfig,
+      header: {        'content-type': 'application/json'        , 'Cookie': 'ticket=' + wx.getStorageSync('ticket')      },
       success: (res) => {
         console.log(res);
         if (res.data.code == 1000000) {

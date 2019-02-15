@@ -117,11 +117,11 @@ color:rgba(255,80,110,1);
   padding-bottom: 40px;
 }
 .publicImgTitle image{
-  height: 120px;
+  height: 110px;
   padding: 20px 0;
 }
 .publicImgBottom image{
-   height: 110px;
+   height: 100px;
   padding: 20px 0;
 }
 .activeImg{
